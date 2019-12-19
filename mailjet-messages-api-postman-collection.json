@@ -1,0 +1,529 @@
+{
+    "id": "17e5618bbe21737f393cf1858787bbaf",
+    "name": "Mailjet Messages API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "7ceb7859b3358d0280773c694f0c44d6",
+            "name": "Message List",
+            "url": "httpsapi.mailjet.comv3\/REST\/message\/",
+            "description": "Allows you to list messages.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Campaign",
+                    "description": "Only retrieve message resources for which Campaign ID equals the specified value.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Contact",
+                    "description": "Only retrieve message resources for which Contact ID equals the specified value.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "MessageState",
+                    "description": "Only show messages with this state.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "PlanSubscription",
+                    "description": "Only retrieve message resources for which PlanSubscription ID equals the specified value.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Sender",
+                    "description": "Only show messages from this sender.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "70c29cb3fdafd2d800b80d652ae964b9",
+            "name": "Message History",
+            "url": "httpsapi.mailjet.comv3\/REST\/messagehistory\/",
+            "description": "List message history resources ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Message",
+                    "description": "ID of message for which to show the history.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "ea785e30e49b0a24748ff15724dc869e",
+            "name": "Message History",
+            "url": "httpsapi.mailjet.comv3\/REST\/messagehistory\/{id}",
+            "description": "Get the history of a message.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID of the message history.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "66005e9128309917b9bc2f1c6599acf3",
+            "name": "Message Informations",
+            "url": "httpsapi.mailjet.comv3\/REST\/messageinformation\/",
+            "description": "Lists the information about a message.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "CampaignID",
+                    "description": "Unique numerical ID for this object.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "CampaignStatus",
+                    "description": "Only retrieve campaigns with status equal to specified value.nn                            n                                [ Type SmallInt ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ContactsList",
+                    "description": "Only retrieve campaigns sent to specified Contacts list.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "CustomCampaign",
+                    "description": "Only retrieve campaigns with given Custom Value.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "From",
+                    "description": "Only retrieve campaigns with given From header.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromDomain",
+                    "description": "Only retrieve campaigns with given domain in From header.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromID",
+                    "description": "Only retrieve campaigns with this sender ID.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromTS",
+                    "description": "Only retrieve campaigns with SendStartAt after this timestamp.nn                            n                                [ Type TRFC3339DateTime ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromType",
+                    "description": "Only retrieve campaigns with FromType equal to specified value.nn                            n                                [ Type LongInt ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "IsDeleted",
+                    "description": "Only retrieve campaigns where isDeleted matches the specified value.nn                            n                                [ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "IsNewsletterTool",
+                    "description": "Only retrieve campaigns which were started by the newsletter tool.nn                            n                                [ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "IsStarred",
+                    "description": "Only retrieve campaigns which were marked as starred.nn                            n                                [ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "MessageStatus",
+                    "description": "Only retrieve messages with status equal to specified value.nn                            n                                [ Type TMessageStatus ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Period",
+                    "description": "Set FromTS and ToTS timestamps to beginning of indicated period and current timestamp, respectively.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ToTS",
+                    "description": "Only retrieve campaigns with SendStartAt timestamp less than the specified value.nn                            n                                [ Type TRFC3339DateTime ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "733e09d32dd698a20bba39f5dc7c1afe",
+            "name": "Message Information",
+            "url": "httpsapi.mailjet.comv3\/REST\/messageinformation\/{id}",
+            "description": "Lists a message informaiton.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID of the message history.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "a522a7231619b5433003db34e1f56d9d",
+            "name": "Message Statistics",
+            "url": "httpsapi.mailjet.comv3\/REST\/messagesentstatistics\/",
+            "description": "Lists the message statistics.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "AllMessages",
+                    "description": "Retrieve all messages. Normally, only the first message of each campaign is retrieved.nn                            n                                [ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "CampaignID",
+                    "description": "Unique numerical ID for this object.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "CampaignStatus",
+                    "description": "Only retrieve campaigns with status equal to specified value.nn                            n                                [ Type SmallInt ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Contact",
+                    "description": "Only retrieve message resources for which Contact ID equals the specified value.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ContactsList",
+                    "description": "Only retrieve campaigns sent to specified Contacts list.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "CustomCampaign",
+                    "description": "Only retrieve campaigns with given Custom Value.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "From",
+                    "description": "Only retrieve campaigns with given From header.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromDomain",
+                    "description": "Only retrieve campaigns with given domain in From header.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromID",
+                    "description": "Only retrieve campaigns with this sender ID.nn                            n                                [ Type Int64 ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromTS",
+                    "description": "Only retrieve campaigns with SendStartAt after this timestamp.nn                            n                                [ Type TRFC3339DateTime ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "FromType",
+                    "description": "Only retrieve campaigns with FromType equal to specified value.nn                            n                                [ Type LongInt ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "IsDeleted",
+                    "description": "Only retrieve campaigns where isDeleted matches the specified value.nn                            n                                [ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "IsNewsletterTool",
+                    "description": "Only retrieve campaigns which were started by the newsletter tool.nn                            n                                [ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "IsStarred",
+                    "description": "Only retrieve campaigns which were marked as starred.nn                            n                                [ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "MessageStatus",
+                    "description": "Only retrieve messages with status equal to specified value.nn                            n                                [ Type TMessageStatus ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Period",
+                    "description": "Set FromTS and ToTS timestamps to beginning of indicated period and current timestamp, respectively.nn                            n                                [ Type AnsiString ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ShowExtraData",
+                    "description": "[ Type TBooleanFilter ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ToTS",
+                    "description": "Only retrieve campaigns with SendStartAt timestamp less than the specified value.nn                            n                                [ Type TRFC3339DateTime ]",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "8752033f52c3a5f3f5851f5a98fc4008",
+            "name": "Message Statistic",
+            "url": "httpsapi.mailjet.comv3\/REST\/messagesentstatistics\/{id}",
+            "description": "List message statistics.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "b1edf27b5d8dc51b9580941654b98b93",
+            "name": "Message State",
+            "url": "httpsapi.mailjet.comv3\/REST\/messagestate\/{id}",
+            "description": "Returns message state.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the message.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        },
+        {
+            "id": "990d52c635c97cc591fd2782f332ca9d",
+            "name": "Message Detail",
+            "url": "httpsapi.mailjet.comv3\/REST\/message{id}",
+            "description": "View the details of a message.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "ID of the message history.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "17e5618bbe21737f393cf1858787bbaf",
+            "rawModeData": ""
+        }
+    ]
+}
