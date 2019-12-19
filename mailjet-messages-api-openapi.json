@@ -1,0 +1,321 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v3",
+        "title": "Mailjet Messages API",
+        "description": "Allows you to list and view the details of a Message (an e-mail) processed by Mailjet",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.mailjet.comv3\/REST\/"
+    ],
+    "paths": {
+        "message\/": {
+            "get": {
+                "summary": "Message List",
+                "description": "Allows you to list messages.",
+                "operationId": "GetMessage",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Campaign",
+                        "in": "query",
+                        "description": "Only retrieve message resources for which Campaign ID equals the specified value.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "Contact",
+                        "in": "query",
+                        "description": "Only retrieve message resources for which Contact ID equals the specified value.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "MessageState",
+                        "in": "query",
+                        "description": "Only show messages with this state.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "PlanSubscription",
+                        "in": "query",
+                        "description": "Only retrieve message resources for which PlanSubscription ID equals the specified value.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "Sender",
+                        "in": "query",
+                        "description": "Only show messages from this sender.nn                            n                                [ Type Int64 ]"
+                    }
+                ]
+            }
+        },
+        "messagehistory\/": {
+            "get": {
+                "summary": "Message History",
+                "description": "List message history resources ",
+                "operationId": "GetMessagehistory",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Message",
+                        "in": "path",
+                        "description": "ID of message for which to show the history."
+                    }
+                ]
+            }
+        },
+        "messagehistory\/{id}": {
+            "get": {
+                "summary": "Message History",
+                "description": "Get the history of a message.",
+                "operationId": "GetMessagehistory",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the message history."
+                    }
+                ]
+            }
+        },
+        "messageinformation\/": {
+            "get": {
+                "summary": "Message Informations",
+                "description": "Lists the information about a message.",
+                "operationId": "GetMessageinformation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "CampaignID",
+                        "in": "query",
+                        "description": "Unique numerical ID for this object.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "CampaignStatus",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with status equal to specified value.nn                            n                                [ Type SmallInt ]"
+                    },
+                    {
+                        "name": "ContactsList",
+                        "in": "query",
+                        "description": "Only retrieve campaigns sent to specified Contacts list.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "CustomCampaign",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with given Custom Value.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "From",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with given From header.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "FromDomain",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with given domain in From header.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "FromID",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with this sender ID.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "FromTS",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with SendStartAt after this timestamp.nn                            n                                [ Type TRFC3339DateTime ]"
+                    },
+                    {
+                        "name": "FromType",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with FromType equal to specified value.nn                            n                                [ Type LongInt ]"
+                    },
+                    {
+                        "name": "IsDeleted",
+                        "in": "query",
+                        "description": "Only retrieve campaigns where isDeleted matches the specified value.nn                            n                                [ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "IsNewsletterTool",
+                        "in": "query",
+                        "description": "Only retrieve campaigns which were started by the newsletter tool.nn                            n                                [ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "IsStarred",
+                        "in": "query",
+                        "description": "Only retrieve campaigns which were marked as starred.nn                            n                                [ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "MessageStatus",
+                        "in": "query",
+                        "description": "Only retrieve messages with status equal to specified value.nn                            n                                [ Type TMessageStatus ]"
+                    },
+                    {
+                        "name": "Period",
+                        "in": "query",
+                        "description": "Set FromTS and ToTS timestamps to beginning of indicated period and current timestamp, respectively.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "ToTS",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with SendStartAt timestamp less than the specified value.nn                            n                                [ Type TRFC3339DateTime ]"
+                    }
+                ]
+            }
+        },
+        "messageinformation\/{id}": {
+            "get": {
+                "summary": "Message Information",
+                "description": "Lists a message informaiton.",
+                "operationId": "GetMessageinformation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the message history."
+                    }
+                ]
+            }
+        },
+        "messagesentstatistics\/": {
+            "get": {
+                "summary": "Message Statistics",
+                "description": "Lists the message statistics.",
+                "operationId": "GetMessagesentstatistics",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "AllMessages",
+                        "in": "query",
+                        "description": "Retrieve all messages. Normally, only the first message of each campaign is retrieved.nn                            n                                [ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "CampaignID",
+                        "in": "query",
+                        "description": "Unique numerical ID for this object.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "CampaignStatus",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with status equal to specified value.nn                            n                                [ Type SmallInt ]"
+                    },
+                    {
+                        "name": "Contact",
+                        "in": "query",
+                        "description": "Only retrieve message resources for which Contact ID equals the specified value.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "ContactsList",
+                        "in": "query",
+                        "description": "Only retrieve campaigns sent to specified Contacts list.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "CustomCampaign",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with given Custom Value.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "From",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with given From header.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "FromDomain",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with given domain in From header.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "FromID",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with this sender ID.nn                            n                                [ Type Int64 ]"
+                    },
+                    {
+                        "name": "FromTS",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with SendStartAt after this timestamp.nn                            n                                [ Type TRFC3339DateTime ]"
+                    },
+                    {
+                        "name": "FromType",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with FromType equal to specified value.nn                            n                                [ Type LongInt ]"
+                    },
+                    {
+                        "name": "IsDeleted",
+                        "in": "query",
+                        "description": "Only retrieve campaigns where isDeleted matches the specified value.nn                            n                                [ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "IsNewsletterTool",
+                        "in": "query",
+                        "description": "Only retrieve campaigns which were started by the newsletter tool.nn                            n                                [ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "IsStarred",
+                        "in": "query",
+                        "description": "Only retrieve campaigns which were marked as starred.nn                            n                                [ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "MessageStatus",
+                        "in": "query",
+                        "description": "Only retrieve messages with status equal to specified value.nn                            n                                [ Type TMessageStatus ]"
+                    },
+                    {
+                        "name": "Period",
+                        "in": "query",
+                        "description": "Set FromTS and ToTS timestamps to beginning of indicated period and current timestamp, respectively.nn                            n                                [ Type AnsiString ]"
+                    },
+                    {
+                        "name": "ShowExtraData",
+                        "in": "query",
+                        "description": "[ Type TBooleanFilter ]"
+                    },
+                    {
+                        "name": "ToTS",
+                        "in": "query",
+                        "description": "Only retrieve campaigns with SendStartAt timestamp less than the specified value.nn                            n                                [ Type TRFC3339DateTime ]"
+                    }
+                ]
+            }
+        },
+        "messagesentstatistics\/{id}": {
+            "get": {
+                "summary": "Message Statistic",
+                "description": "List message statistics.",
+                "operationId": "GetMessagesentstatistics",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "messagestate\/{id}": {
+            "get": {
+                "summary": "Message State",
+                "description": "Returns message state.",
+                "operationId": "GetMessagestate",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id of the message."
+                    }
+                ]
+            }
+        },
+        "message{id}": {
+            "get": {
+                "summary": "Message Detail",
+                "description": "View the details of a message.",
+                "operationId": "GetMessage",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the message history."
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": []
+    }
+}
