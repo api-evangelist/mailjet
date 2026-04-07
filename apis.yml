@@ -9,10 +9,10 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Email
-  - Transactional Email
+  - Email Delivery
   - Marketing Email
   - SMTP
-  - Email Delivery
+  - Transactional Email
 url: >-
   https://raw.githubusercontent.com/api-evangelist/mailjet/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -30,8 +30,8 @@ apis:
     baseURL: https://api.mailjet.com/v3
     tags:
       - Email
-      - Transactional Email
       - Marketing Email
+      - Transactional Email
     properties:
       - type: Documentation
         url: https://dev.mailjet.com/email/guides/
