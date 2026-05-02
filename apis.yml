@@ -16,7 +16,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/mailjet/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-03-16'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
   - aid: mailjet:mailjet-email-api
@@ -41,6 +41,8 @@ apis:
         url: https://dev.mailjet.com/email/guides/send-api-V3/
       - type: Authentication
         url: https://dev.mailjet.com/email/guides/#authentication
+      - type: OpenAPI
+        url: openapi/mailjet-email-api-openapi.yml
 common:
   - type: Portal
     url: https://dev.mailjet.com/

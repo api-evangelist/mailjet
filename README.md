@@ -16,7 +16,7 @@ Mailjet is an email service provider offering a powerful REST API for sending tr
 ## Timestamps
 
 - **Created:** 2026-03-16 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -36,6 +36,7 @@ The Mailjet REST API allows sending transactional and marketing emails programma
 - [Reference](https://dev.mailjet.com/email/reference/)
 - [Getting Started](https://dev.mailjet.com/email/guides/send-api-V3/)
 - [Authentication](https://dev.mailjet.com/email/guides/#authentication)
+- [OpenAPI](openapi/mailjet-email-api-openapi.yml)
 
 ## Common Properties
 
