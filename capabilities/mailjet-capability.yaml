@@ -1,0 +1,670 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Mailjet Email API
+  description: The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests.
+    The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses,
+    statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from
+    the Mailjet account dashboard.
+  tags:
+  - Mailjet
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: mailjet
+    baseUri: https://api.mailjet.com/v3.1
+    description: Mailjet Email API HTTP API.
+    authentication:
+      type: basic
+      username: '{{MAILJET_USERNAME}}'
+      password: '{{MAILJET_PASSWORD}}'
+    resources:
+    - name: send
+      path: /send
+      operations:
+      - name: sendemail
+        method: POST
+        description: Send transactional emails (v3.1)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contact
+      path: /contact
+      operations:
+      - name: listcontacts
+        method: GET
+        description: List contacts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcontact
+        method: POST
+        description: Create a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contact-id
+      path: /contact/{id}
+      operations:
+      - name: getcontact
+        method: GET
+        description: Get a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecontact
+        method: PUT
+        description: Update a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contactslist
+      path: /contactslist
+      operations:
+      - name: listcontactslists
+        method: GET
+        description: List contact lists
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcontactslist
+        method: POST
+        description: Create a contact list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contactslist-id
+      path: /contactslist/{id}
+      operations:
+      - name: getcontactslist
+        method: GET
+        description: Get a contact list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecontactslist
+        method: DELETE
+        description: Delete a contact list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contactslist-id-managemanycontacts
+      path: /contactslist/{id}/managemanycontacts
+      operations:
+      - name: managemanycontacts
+        method: POST
+        description: Bulk add or remove contacts in a list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: campaign
+      path: /campaign
+      operations:
+      - name: listcampaigns
+        method: GET
+        description: List campaigns
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: campaigndraft
+      path: /campaigndraft
+      operations:
+      - name: listcampaigndrafts
+        method: GET
+        description: List campaign drafts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcampaigndraft
+        method: POST
+        description: Create a campaign draft
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: campaigndraft-id-send
+      path: /campaigndraft/{id}/send
+      operations:
+      - name: sendcampaigndraft
+        method: POST
+        description: Send a campaign draft
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: template
+      path: /template
+      operations:
+      - name: listtemplates
+        method: GET
+        description: List templates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createtemplate
+        method: POST
+        description: Create a template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sender
+      path: /sender
+      operations:
+      - name: listsenders
+        method: GET
+        description: List sender addresses
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createsender
+        method: POST
+        description: Create a sender address
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: statcounters
+      path: /statcounters
+      operations:
+      - name: getstatcounters
+        method: GET
+        description: Get sending statistic counters
+        inputParameters:
+        - name: SourceID
+          in: query
+          type: integer
+        - name: CounterSource
+          in: query
+          type: string
+        - name: CounterTiming
+          in: query
+          type: string
+        - name: CounterResolution
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: messagehistory-id
+      path: /messagehistory/{id}
+      operations:
+      - name: getmessagehistory
+        method: GET
+        description: Get the event history of a message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: mailjet-rest
+    description: REST adapter for Mailjet Email API.
+    resources:
+    - path: /send
+      name: sendemail
+      operations:
+      - method: POST
+        name: sendemail
+        description: Send transactional emails (v3.1)
+        call: mailjet.sendemail
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contact
+      name: listcontacts
+      operations:
+      - method: GET
+        name: listcontacts
+        description: List contacts
+        call: mailjet.listcontacts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contact
+      name: createcontact
+      operations:
+      - method: POST
+        name: createcontact
+        description: Create a contact
+        call: mailjet.createcontact
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contact/{id}
+      name: getcontact
+      operations:
+      - method: GET
+        name: getcontact
+        description: Get a contact
+        call: mailjet.getcontact
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contact/{id}
+      name: updatecontact
+      operations:
+      - method: PUT
+        name: updatecontact
+        description: Update a contact
+        call: mailjet.updatecontact
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contactslist
+      name: listcontactslists
+      operations:
+      - method: GET
+        name: listcontactslists
+        description: List contact lists
+        call: mailjet.listcontactslists
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contactslist
+      name: createcontactslist
+      operations:
+      - method: POST
+        name: createcontactslist
+        description: Create a contact list
+        call: mailjet.createcontactslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contactslist/{id}
+      name: getcontactslist
+      operations:
+      - method: GET
+        name: getcontactslist
+        description: Get a contact list
+        call: mailjet.getcontactslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contactslist/{id}
+      name: deletecontactslist
+      operations:
+      - method: DELETE
+        name: deletecontactslist
+        description: Delete a contact list
+        call: mailjet.deletecontactslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contactslist/{id}/managemanycontacts
+      name: managemanycontacts
+      operations:
+      - method: POST
+        name: managemanycontacts
+        description: Bulk add or remove contacts in a list
+        call: mailjet.managemanycontacts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /campaign
+      name: listcampaigns
+      operations:
+      - method: GET
+        name: listcampaigns
+        description: List campaigns
+        call: mailjet.listcampaigns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /campaigndraft
+      name: listcampaigndrafts
+      operations:
+      - method: GET
+        name: listcampaigndrafts
+        description: List campaign drafts
+        call: mailjet.listcampaigndrafts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /campaigndraft
+      name: createcampaigndraft
+      operations:
+      - method: POST
+        name: createcampaigndraft
+        description: Create a campaign draft
+        call: mailjet.createcampaigndraft
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /campaigndraft/{id}/send
+      name: sendcampaigndraft
+      operations:
+      - method: POST
+        name: sendcampaigndraft
+        description: Send a campaign draft
+        call: mailjet.sendcampaigndraft
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /template
+      name: listtemplates
+      operations:
+      - method: GET
+        name: listtemplates
+        description: List templates
+        call: mailjet.listtemplates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /template
+      name: createtemplate
+      operations:
+      - method: POST
+        name: createtemplate
+        description: Create a template
+        call: mailjet.createtemplate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /sender
+      name: listsenders
+      operations:
+      - method: GET
+        name: listsenders
+        description: List sender addresses
+        call: mailjet.listsenders
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /sender
+      name: createsender
+      operations:
+      - method: POST
+        name: createsender
+        description: Create a sender address
+        call: mailjet.createsender
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /statcounters
+      name: getstatcounters
+      operations:
+      - method: GET
+        name: getstatcounters
+        description: Get sending statistic counters
+        call: mailjet.getstatcounters
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /messagehistory/{id}
+      name: getmessagehistory
+      operations:
+      - method: GET
+        name: getmessagehistory
+        description: Get the event history of a message
+        call: mailjet.getmessagehistory
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: mailjet-mcp
+    transport: http
+    description: MCP adapter for Mailjet Email API for AI agent use.
+    tools:
+    - name: sendemail
+      description: Send transactional emails (v3.1)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.sendemail
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcontacts
+      description: List contacts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.listcontacts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcontact
+      description: Create a contact
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.createcontact
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcontact
+      description: Get a contact
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.getcontact
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatecontact
+      description: Update a contact
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: mailjet.updatecontact
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcontactslists
+      description: List contact lists
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.listcontactslists
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcontactslist
+      description: Create a contact list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.createcontactslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcontactslist
+      description: Get a contact list
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.getcontactslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecontactslist
+      description: Delete a contact list
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: mailjet.deletecontactslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: managemanycontacts
+      description: Bulk add or remove contacts in a list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.managemanycontacts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcampaigns
+      description: List campaigns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.listcampaigns
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcampaigndrafts
+      description: List campaign drafts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.listcampaigndrafts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcampaigndraft
+      description: Create a campaign draft
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.createcampaigndraft
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sendcampaigndraft
+      description: Send a campaign draft
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.sendcampaigndraft
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listtemplates
+      description: List templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.listtemplates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createtemplate
+      description: Create a template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.createtemplate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listsenders
+      description: List sender addresses
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.listsenders
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createsender
+      description: Create a sender address
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: mailjet.createsender
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getstatcounters
+      description: Get sending statistic counters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.getstatcounters
+      with:
+        SourceID: tools.SourceID
+        CounterSource: tools.CounterSource
+        CounterTiming: tools.CounterTiming
+        CounterResolution: tools.CounterResolution
+      inputParameters:
+      - name: SourceID
+        type: integer
+        description: SourceID
+      - name: CounterSource
+        type: string
+        description: CounterSource
+      - name: CounterTiming
+        type: string
+        description: CounterTiming
+      - name: CounterResolution
+        type: string
+        description: CounterResolution
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getmessagehistory
+      description: Get the event history of a message
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: mailjet.getmessagehistory
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    MAILJET_USERNAME: MAILJET_USERNAME
+    MAILJET_PASSWORD: MAILJET_PASSWORD
