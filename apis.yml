@@ -37,7 +37,7 @@ apis:
         url: https://dev.mailjet.com/email/guides/
       - type: Reference
         url: https://dev.mailjet.com/email/reference/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://dev.mailjet.com/email/guides/send-api-V3/
       - type: Authentication
         url: https://dev.mailjet.com/email/guides/#authentication
@@ -46,21 +46,21 @@ apis:
 common:
   - type: Portal
     url: https://dev.mailjet.com/
-  - type: Sign Up
+  - type: SignUp
     url: https://app.mailjet.com/signup
   - type: Login
     url: https://app.mailjet.com/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/mailjet
   - type: Support
     url: https://documentation.mailjet.com/hc/en-us
   - type: Pricing
     url: https://www.mailjet.com/pricing/
-  - type: Status
+  - type: StatusPage
     url: https://mailjetstatus.com/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.mailjet.com/legal/terms/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.mailjet.com/legal/privacy-policy/
 maintainers:
   - FN: Kin Lane
