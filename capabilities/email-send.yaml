@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Mailjet Email API — Send
+  description: 'Mailjet Email API — Send. 1 operations. Lead operation: Send transactional emails (v3.1). Self-contained Naftiko
+    capability covering one Mailjet business surface.'
+  tags:
+  - Mailjet
+  - Send
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MAILJET_API_KEY: MAILJET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: email-send
+    baseUri: https://api.mailjet.com/v3.1
+    description: Mailjet Email API — Send business capability. Self-contained, no shared references.
+    resources:
+    - name: send
+      path: /send
+      operations:
+      - name: sendemail
+        method: POST
+        description: Send transactional emails (v3.1)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: basic
+      username: '{{env.MAILJET_USER}}'
+      password: '{{env.MAILJET_PASS}}'
+  exposes:
+  - type: rest
+    namespace: email-send-rest
+    port: 8080
+    description: REST adapter for Mailjet Email API — Send. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/send
+      name: send
+      description: REST surface for send.
+      operations:
+      - method: POST
+        name: sendemail
+        description: Send transactional emails (v3.1)
+        call: email-send.sendemail
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: email-send-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Mailjet Email API — Send. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: send-transactional-emails-v3-1
+      description: Send transactional emails (v3.1)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: email-send.sendemail
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

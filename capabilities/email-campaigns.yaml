@@ -1,0 +1,170 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Mailjet Email API — Campaigns
+  description: 'Mailjet Email API — Campaigns. 4 operations. Lead operation: List campaigns. Self-contained Naftiko capability
+    covering one Mailjet business surface.'
+  tags:
+  - Mailjet
+  - Campaigns
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MAILJET_API_KEY: MAILJET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: email-campaigns
+    baseUri: https://api.mailjet.com/v3.1
+    description: Mailjet Email API — Campaigns business capability. Self-contained, no shared references.
+    resources:
+    - name: campaign
+      path: /campaign
+      operations:
+      - name: listcampaigns
+        method: GET
+        description: List campaigns
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: campaigndraft
+      path: /campaigndraft
+      operations:
+      - name: listcampaigndrafts
+        method: GET
+        description: List campaign drafts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcampaigndraft
+        method: POST
+        description: Create a campaign draft
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: campaigndraft-id-send
+      path: /campaigndraft/{id}/send
+      operations:
+      - name: sendcampaigndraft
+        method: POST
+        description: Send a campaign draft
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: basic
+      username: '{{env.MAILJET_USER}}'
+      password: '{{env.MAILJET_PASS}}'
+  exposes:
+  - type: rest
+    namespace: email-campaigns-rest
+    port: 8080
+    description: REST adapter for Mailjet Email API — Campaigns. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/campaign
+      name: campaign
+      description: REST surface for campaign.
+      operations:
+      - method: GET
+        name: listcampaigns
+        description: List campaigns
+        call: email-campaigns.listcampaigns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/campaigndraft
+      name: campaigndraft
+      description: REST surface for campaigndraft.
+      operations:
+      - method: GET
+        name: listcampaigndrafts
+        description: List campaign drafts
+        call: email-campaigns.listcampaigndrafts
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcampaigndraft
+        description: Create a campaign draft
+        call: email-campaigns.createcampaigndraft
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/campaigndraft/{id}/send
+      name: campaigndraft-id-send
+      description: REST surface for campaigndraft-id-send.
+      operations:
+      - method: POST
+        name: sendcampaigndraft
+        description: Send a campaign draft
+        call: email-campaigns.sendcampaigndraft
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: email-campaigns-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Mailjet Email API — Campaigns. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-campaigns
+      description: List campaigns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: email-campaigns.listcampaigns
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-campaign-drafts
+      description: List campaign drafts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: email-campaigns.listcampaigndrafts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-campaign-draft
+      description: Create a campaign draft
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: email-campaigns.createcampaigndraft
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: send-campaign-draft
+      description: Send a campaign draft
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: email-campaigns.sendcampaigndraft
+      outputParameters:
+      - type: object
+        mapping: $.

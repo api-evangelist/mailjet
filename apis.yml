@@ -1,67 +1,80 @@
 aid: mailjet
 name: Mailjet
-description: >-
-  Mailjet is an email service provider offering a powerful REST API for sending
-  transactional and marketing emails. It provides an easy-to-integrate API with
-  support for PHP, Python, Ruby, Java, Node.js, C#, and Go, along with SMTP relay
+description: Mailjet is an email service provider offering a powerful REST API for sending transactional and marketing emails.
+  It provides an easy-to-integrate API with support for PHP, Python, Ruby, Java, Node.js, C#, and Go, along with SMTP relay
   and real-time email tracking.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Email
-  - Email Delivery
-  - Marketing Email
-  - SMTP
-  - Transactional Email
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/mailjet/refs/heads/main/apis.yml
+- Email
+- Email Delivery
+- Marketing Email
+- SMTP
+- Transactional Email
+url: https://raw.githubusercontent.com/api-evangelist/mailjet/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-28'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: mailjet:mailjet-email-api
-    name: Mailjet Email API
-    description: >-
-      The Mailjet REST API allows sending transactional and marketing emails
-      programmatically using HTTP GET and POST requests with JSON, XML, or
-      other supported formats. Includes send API, contact management, campaign
-      management, statistics, and event tracking.
-    humanURL: https://dev.mailjet.com/
-    baseURL: https://api.mailjet.com/v3
-    tags:
-      - Email
-      - Marketing Email
-      - Transactional Email
-    properties:
-      - type: Documentation
-        url: https://dev.mailjet.com/email/guides/
-      - type: Reference
-        url: https://dev.mailjet.com/email/reference/
-      - type: GettingStarted
-        url: https://dev.mailjet.com/email/guides/send-api-V3/
-      - type: Authentication
-        url: https://dev.mailjet.com/email/guides/#authentication
-      - type: OpenAPI
-        url: openapi/mailjet-email-api-openapi.yml
+- aid: mailjet:mailjet-email-api
+  name: Mailjet Email API
+  description: The Mailjet REST API allows sending transactional and marketing emails programmatically using HTTP GET and
+    POST requests with JSON, XML, or other supported formats. Includes send API, contact management, campaign management,
+    statistics, and event tracking.
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Email
+  - Marketing Email
+  - Transactional Email
+  properties:
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: OpenAPI
+    url: openapi/mailjet-email-api-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/email-campaigns.yaml
+  - type: NaftikoCapability
+    url: capabilities/email-contact-lists.yaml
+  - type: NaftikoCapability
+    url: capabilities/email-contacts.yaml
+  - type: NaftikoCapability
+    url: capabilities/email-event.yaml
+  - type: NaftikoCapability
+    url: capabilities/email-send.yaml
+  - type: NaftikoCapability
+    url: capabilities/email-senders.yaml
+  - type: NaftikoCapability
+    url: capabilities/email-statistics.yaml
+  - type: NaftikoCapability
+    url: capabilities/email-templates.yaml
 common:
-  - type: Portal
-    url: https://dev.mailjet.com/
-  - type: SignUp
-    url: https://app.mailjet.com/signup
-  - type: Login
-    url: https://app.mailjet.com/
-  - type: GitHubOrganization
-    url: https://github.com/mailjet
-  - type: Support
-    url: https://documentation.mailjet.com/hc/en-us
-  - type: Pricing
-    url: https://www.mailjet.com/pricing/
-  - type: StatusPage
-    url: https://mailjetstatus.com/
-  - type: TermsOfService
-    url: https://www.mailjet.com/legal/terms/
-  - type: PrivacyPolicy
-    url: https://www.mailjet.com/legal/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/mailjet
+- type: Portal
+  url: https://dev.mailjet.com/
+- type: SignUp
+  url: https://app.mailjet.com/signup
+- type: Login
+  url: https://app.mailjet.com/
+- type: GitHubOrganization
+  url: https://github.com/mailjet
+- type: Support
+  url: https://documentation.mailjet.com/hc/en-us
+- type: Pricing
+  url: https://www.mailjet.com/pricing/
+- type: StatusPage
+  url: https://mailjetstatus.com/
+- type: TermsOfService
+  url: https://www.mailjet.com/legal/terms/
+- type: PrivacyPolicy
+  url: https://www.mailjet.com/legal/privacy-policy/
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

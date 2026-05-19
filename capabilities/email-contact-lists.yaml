@@ -1,0 +1,205 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Mailjet Email API — Contact Lists
+  description: 'Mailjet Email API — Contact Lists. 5 operations. Lead operation: List contact lists. Self-contained Naftiko
+    capability covering one Mailjet business surface.'
+  tags:
+  - Mailjet
+  - Contact Lists
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MAILJET_API_KEY: MAILJET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: email-contact-lists
+    baseUri: https://api.mailjet.com/v3.1
+    description: Mailjet Email API — Contact Lists business capability. Self-contained, no shared references.
+    resources:
+    - name: contactslist
+      path: /contactslist
+      operations:
+      - name: listcontactslists
+        method: GET
+        description: List contact lists
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcontactslist
+        method: POST
+        description: Create a contact list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: contactslist-id
+      path: /contactslist/{id}
+      operations:
+      - name: getcontactslist
+        method: GET
+        description: Get a contact list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecontactslist
+        method: DELETE
+        description: Delete a contact list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contactslist-id-managemanycontacts
+      path: /contactslist/{id}/managemanycontacts
+      operations:
+      - name: managemanycontacts
+        method: POST
+        description: Bulk add or remove contacts in a list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: basic
+      username: '{{env.MAILJET_USER}}'
+      password: '{{env.MAILJET_PASS}}'
+  exposes:
+  - type: rest
+    namespace: email-contact-lists-rest
+    port: 8080
+    description: REST adapter for Mailjet Email API — Contact Lists. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/contactslist
+      name: contactslist
+      description: REST surface for contactslist.
+      operations:
+      - method: GET
+        name: listcontactslists
+        description: List contact lists
+        call: email-contact-lists.listcontactslists
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcontactslist
+        description: Create a contact list
+        call: email-contact-lists.createcontactslist
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/contactslist/{id}
+      name: contactslist-id
+      description: REST surface for contactslist-id.
+      operations:
+      - method: GET
+        name: getcontactslist
+        description: Get a contact list
+        call: email-contact-lists.getcontactslist
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletecontactslist
+        description: Delete a contact list
+        call: email-contact-lists.deletecontactslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/contactslist/{id}/managemanycontacts
+      name: contactslist-id-managemanycontacts
+      description: REST surface for contactslist-id-managemanycontacts.
+      operations:
+      - method: POST
+        name: managemanycontacts
+        description: Bulk add or remove contacts in a list
+        call: email-contact-lists.managemanycontacts
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: email-contact-lists-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Mailjet Email API — Contact Lists. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-contact-lists
+      description: List contact lists
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: email-contact-lists.listcontactslists
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-contact-list
+      description: Create a contact list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: email-contact-lists.createcontactslist
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-contact-list
+      description: Get a contact list
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: email-contact-lists.getcontactslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-contact-list
+      description: Delete a contact list
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: email-contact-lists.deletecontactslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: bulk-add-remove-contacts-list
+      description: Bulk add or remove contacts in a list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: email-contact-lists.managemanycontacts
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
