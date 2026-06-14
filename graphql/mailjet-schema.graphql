@@ -1,0 +1,1005 @@
+# Mailjet GraphQL Schema
+# Conceptual schema derived from the Mailjet Email REST API v3
+# Source: https://dev.mailjet.com/email/reference/
+
+# ─── Scalars ────────────────────────────────────────────────────────────────
+
+scalar DateTime
+scalar JSON
+
+# ─── Enums ──────────────────────────────────────────────────────────────────
+
+enum MessageStatusEnum {
+  queued
+  sent
+  opened
+  clicked
+  bounced
+  spam
+  unsub
+  blocked
+  softbounced
+  hardbounced
+}
+
+enum CampaignDraftStatusEnum {
+  Draft
+  Programmed
+  Sent
+  AXCancelled
+  AXDraftSent
+  Deleted
+}
+
+enum BulkJobStatusEnum {
+  Pending
+  InProgress
+  Completed
+  Error
+}
+
+enum WebhookEventEnum {
+  sent
+  open
+  click
+  bounce
+  spam
+  blocked
+  unsub
+  inbound
+}
+
+enum SuppressionTypeEnum {
+  Unsubscribe
+  HardBounce
+  SpamReport
+  UserRemoved
+  InvalidEmail
+}
+
+enum ListActionEnum {
+  addnoforce
+  addforce
+  remove
+  unsub
+}
+
+enum SenderStatusEnum {
+  Inactive
+  Active
+  Unknown
+}
+
+enum TemplateOwnershipEnum {
+  Mailjet
+  User
+}
+
+# ─── Messaging Types ─────────────────────────────────────────────────────────
+
+type Message {
+  id: ID!
+  uuid: String
+  status: MessageStatusEnum
+  details: MessageDetails
+  email: EmailMessage
+  arrivedAt: DateTime
+  sentAt: DateTime
+  openedAt: DateTime
+  clickedAt: DateTime
+  bouncedAt: DateTime
+}
+
+type MessageDetails {
+  id: ID!
+  messageID: String
+  status: MessageStatusEnum
+  stateID: Int
+  errorRelatedTo: String
+  errorCode: String
+  campaignID: ID
+  contactID: ID
+  senderEmail: String
+  recipientEmail: String
+  subject: String
+  sentAt: DateTime
+  arrivedAt: DateTime
+}
+
+type MessageStatus {
+  id: ID!
+  messageID: String
+  status: MessageStatusEnum
+  stateID: Int
+  errorCode: String
+  arrivedAt: DateTime
+}
+
+type EmailMessage {
+  id: ID!
+  from: EmailHeader
+  replyTo: EmailHeader
+  to: [Recipient!]
+  cc: [Recipient!]
+  bcc: [Recipient!]
+  subject: String!
+  textPart: String
+  htmlPart: String
+  templateID: ID
+  variables: JSON
+  headers: JSON
+  attachments: [Attachment]
+  inlinedAttachments: [Attachment]
+  trackOpens: String
+  trackClicks: String
+  customID: String
+  eventPayload: String
+  monitoringCategory: String
+  urlTags: String
+}
+
+type EmailDetails {
+  id: ID!
+  messageID: String
+  subject: String
+  from: EmailHeader
+  to: [Recipient!]
+  sentAt: DateTime
+  status: MessageStatusEnum
+  size: Int
+  spamScore: Float
+  headers: JSON
+}
+
+type EmailHeader {
+  email: String!
+  name: String
+}
+
+type Attachment {
+  contentType: String!
+  filename: String!
+  base64Content: String
+  contentID: String
+}
+
+# ─── Recipient Types ─────────────────────────────────────────────────────────
+
+type Recipient {
+  email: String!
+  name: String
+  variables: JSON
+}
+
+type RecipientDetails {
+  id: ID!
+  email: String!
+  name: String
+  contactID: ID
+  listID: ID
+  isUnsubscribed: Boolean
+  unsubscribedAt: DateTime
+  isExcludedFromCampaigns: Boolean
+  createdAt: DateTime
+}
+
+# ─── Contact Types ───────────────────────────────────────────────────────────
+
+type Contact {
+  id: ID!
+  email: String!
+  name: String
+  isExcludedFromCampaigns: Boolean
+  isOptInPending: Boolean
+  isSpamComplaining: Boolean
+  lastActivityAt: DateTime
+  createdAt: DateTime
+  details: ContactDetails
+  properties: ContactProperties
+  lists: [ContactList!]
+}
+
+type ContactDetails {
+  id: ID!
+  email: String!
+  name: String
+  isExcludedFromCampaigns: Boolean
+  deliveredCount: Int
+  lastDeliveryAt: DateTime
+  lastOpenedAt: DateTime
+  lastClickedAt: DateTime
+  bouncedCount: Int
+  spamReportedAt: DateTime
+  unsubscribedAt: DateTime
+  createdAt: DateTime
+}
+
+type ContactEmail {
+  id: ID!
+  contactID: ID!
+  email: String!
+  isPrimary: Boolean
+  isVerified: Boolean
+}
+
+type ContactProperties {
+  contactID: ID!
+  properties: JSON
+}
+
+# ─── Contact List Types ───────────────────────────────────────────────────────
+
+type ContactList {
+  id: ID!
+  name: String!
+  address: String
+  isDeleted: Boolean
+  subscriberCount: Int
+  createdAt: DateTime
+  members: [ListMember!]
+}
+
+type ListMember {
+  id: ID!
+  contactID: ID!
+  listID: ID!
+  email: String
+  isUnsubscribed: Boolean
+  isActive: Boolean
+  addedAt: DateTime
+  unsubscribedAt: DateTime
+  membership: ListMembership
+}
+
+type ListMembership {
+  contactID: ID!
+  listID: ID!
+  status: String
+  isUnsubscribed: Boolean
+  addedAt: DateTime
+  updatedAt: DateTime
+}
+
+type ContactsListMembership {
+  contactID: ID!
+  listID: ID!
+  isUnsubscribed: Boolean
+  addedAt: DateTime
+  action: ListActionEnum
+}
+
+# ─── Campaign Types ───────────────────────────────────────────────────────────
+
+type Campaign {
+  id: ID!
+  subject: String
+  senderEmail: String
+  senderName: String
+  listID: ID
+  createdAt: DateTime
+  sentAt: DateTime
+  isDeleted: Boolean
+  isStarred: Boolean
+  details: CampaignDetails
+  statistics: CampaignStatistics
+}
+
+type CampaignDetails {
+  id: ID!
+  subject: String
+  senderEmail: String
+  senderName: String
+  listID: ID
+  listName: String
+  templateID: ID
+  htmlPart: String
+  textPart: String
+  createdAt: DateTime
+  sentAt: DateTime
+  status: String
+}
+
+type CampaignDraft {
+  id: ID!
+  subject: String
+  senderEmail: String
+  senderName: String
+  listID: ID
+  status: CampaignDraftStatusEnum
+  createdAt: DateTime
+  scheduledAt: DateTime
+  details: CampaignDraftDetails
+}
+
+type CampaignDraftDetails {
+  id: ID!
+  subject: String
+  senderEmail: String
+  senderName: String
+  listID: ID
+  templateID: ID
+  htmlPart: String
+  textPart: String
+  replyEmail: String
+  title: String
+  segmentationID: ID
+  trackOpens: Boolean
+  trackClicks: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  scheduledAt: DateTime
+}
+
+type CampaignDraftStatus {
+  id: ID!
+  status: CampaignDraftStatusEnum
+  policyDocumentChecked: Boolean
+  senderValidated: Boolean
+  listNotEmpty: Boolean
+  htmlPartValidated: Boolean
+  textPartValidated: Boolean
+  subjectValidated: Boolean
+}
+
+type CampaignStatistics {
+  campaignID: ID!
+  deliveredCount: Int
+  openedCount: Int
+  uniqueOpenedCount: Int
+  clickedCount: Int
+  uniqueClickedCount: Int
+  bouncedCount: Int
+  softBouncedCount: Int
+  hardBouncedCount: Int
+  unsubscribedCount: Int
+  spamReportedCount: Int
+  blockedCount: Int
+  openRate: Float
+  clickRate: Float
+  bounceRate: Float
+  unsubscribeRate: Float
+  spamRate: Float
+}
+
+# ─── Template Types ───────────────────────────────────────────────────────────
+
+type Template {
+  id: ID!
+  name: String!
+  authorEmail: String
+  editMode: Int
+  isTextPartIncluded: Boolean
+  categories: [String]
+  ownersType: TemplateOwnershipEnum
+  previewUrl: String
+  createdAt: DateTime
+  details: TemplateDetails
+  content: TemplateContent
+}
+
+type TemplateDetails {
+  id: ID!
+  name: String!
+  subject: String
+  senderEmail: String
+  senderName: String
+  authorEmail: String
+  editMode: Int
+  isTextPartIncluded: Boolean
+  categories: [String]
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type TemplateContent {
+  templateID: ID!
+  htmlPart: String
+  textPart: String
+  mjml: String
+  headers: JSON
+}
+
+# ─── Sender Types ─────────────────────────────────────────────────────────────
+
+type Sender {
+  id: ID!
+  email: String!
+  name: String
+  status: SenderStatusEnum
+  isDefaultSender: Boolean
+  createdAt: DateTime
+  details: SenderDetails
+}
+
+type SenderDetails {
+  id: ID!
+  email: String!
+  name: String
+  status: SenderStatusEnum
+  isDefaultSender: Boolean
+  emailType: String
+  filename: String
+  dnsID: ID
+  createdAt: DateTime
+}
+
+# ─── Domain Types ─────────────────────────────────────────────────────────────
+
+type Domain {
+  id: ID!
+  domain: String!
+  isCheckInProgress: Boolean
+  spf: SPF
+  dkim: DKIM
+  details: DomainDetails
+}
+
+type DomainDetails {
+  id: ID!
+  domain: String!
+  isCheckInProgress: Boolean
+  lastCheckAt: DateTime
+  spfRecordFound: Boolean
+  dkimRecordFound: Boolean
+  ownerShipToken: String
+  ownerShipTokenRecordFound: Boolean
+}
+
+type SPF {
+  domainID: ID!
+  isValid: Boolean
+  record: String
+  errorType: String
+  checkedAt: DateTime
+}
+
+type DKIM {
+  domainID: ID!
+  isValid: Boolean
+  selector: String
+  publicKey: String
+  errorType: String
+  checkedAt: DateTime
+}
+
+# ─── Statistics Types ─────────────────────────────────────────────────────────
+
+type Statistics {
+  campaignID: ID
+  contactID: ID
+  fromTS: DateTime
+  toTS: DateTime
+  delivery: DeliveryStats
+  opens: OpenStats
+  clicks: ClickStats
+  bounces: BounceStats
+  unsubscribes: UnsubscribeStats
+  spam: SpamStats
+}
+
+type DeliveryStats {
+  sent: Int!
+  delivered: Int!
+  blocked: Int!
+  softBounced: Int!
+  hardBounced: Int!
+  deliveryRate: Float
+}
+
+type OpenStats {
+  opened: Int!
+  uniqueOpened: Int!
+  openRate: Float
+  lastOpenAt: DateTime
+}
+
+type ClickStats {
+  clicked: Int!
+  uniqueClicked: Int!
+  clickRate: Float
+  lastClickAt: DateTime
+}
+
+type BounceStats {
+  bounced: Int!
+  softBounced: Int!
+  hardBounced: Int!
+  bounceRate: Float
+  lastBounceAt: DateTime
+}
+
+type UnsubscribeStats {
+  unsubscribed: Int!
+  unsubscribeRate: Float
+  lastUnsubscribeAt: DateTime
+}
+
+type SpamStats {
+  spamReported: Int!
+  spamRate: Float
+  lastSpamReportAt: DateTime
+}
+
+# ─── Suppression Types ────────────────────────────────────────────────────────
+
+type Suppression {
+  id: ID!
+  email: String!
+  suppressionType: SuppressionTypeEnum
+  createdAt: DateTime
+  details: SuppressionDetails
+}
+
+type SuppressionDetails {
+  id: ID!
+  email: String!
+  suppressionType: SuppressionTypeEnum
+  campaignID: ID
+  messageID: ID
+  reason: String
+  createdAt: DateTime
+}
+
+# ─── Bulk Job Types ───────────────────────────────────────────────────────────
+
+type BulkJob {
+  id: ID!
+  method: String
+  dataFilename: String
+  status: BulkJobStatus
+  createdAt: DateTime
+  details: BulkJobDetails
+}
+
+type BulkJobDetails {
+  id: ID!
+  method: String
+  dataFilename: String
+  requestObject: String
+  contactsLists: [ID]
+  error: String
+  jobStart: DateTime
+  jobEnd: DateTime
+  createdAt: DateTime
+  status: BulkJobStatus
+}
+
+type BulkJobStatus {
+  jobID: ID!
+  status: BulkJobStatusEnum
+  count: Int
+  errorCount: Int
+  errorMessage: String
+  jobStart: DateTime
+  jobEnd: DateTime
+}
+
+# ─── Webhook Types ────────────────────────────────────────────────────────────
+
+type Webhook {
+  id: ID!
+  url: String!
+  eventType: WebhookEventEnum
+  isBackup: Boolean
+  status: String
+  details: WebhookDetails
+}
+
+type WebhookDetails {
+  id: ID!
+  url: String!
+  eventType: WebhookEventEnum
+  isBackup: Boolean
+  status: String
+  version: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type WebhookEvent {
+  event: WebhookEventEnum!
+  time: DateTime
+  messageID: ID
+  email: String
+  mj_message_id: String
+  customID: String
+  payload: JSON
+  ip: String
+  geo: String
+  agent: String
+  url: String
+  errorRelatedTo: String
+  errorCode: String
+  source: String
+}
+
+# ─── Inbound Email / Parse Route Types ───────────────────────────────────────
+
+type ParseRoute {
+  id: ID!
+  email: String!
+  url: String!
+  apiKeyID: ID
+  details: InboundDetails
+}
+
+type InboundEmail {
+  id: ID!
+  from: String
+  sender: String
+  to: String
+  subject: String
+  textPart: String
+  htmlPart: String
+  receivedAt: DateTime
+  spamScore: Float
+  headers: JSON
+  attachments: [Attachment]
+  details: InboundDetails
+}
+
+type InboundDetails {
+  id: ID!
+  email: String
+  url: String
+  apiKeyID: ID
+  processingMethod: String
+  createdAt: DateTime
+}
+
+# ─── Account / Auth Types ─────────────────────────────────────────────────────
+
+type SubAccount {
+  id: ID!
+  name: String!
+  apiKeyID: ID
+  isActive: Boolean
+  senderEmail: String
+  companyName: String
+  contactEmail: String
+  createdAt: DateTime
+}
+
+type APIKey {
+  id: ID!
+  name: String!
+  apiKey: String
+  isActive: Boolean
+  acl: String
+  createdAt: DateTime
+  subAccount: SubAccount
+}
+
+type SecretKey {
+  id: ID!
+  apiKeyID: ID!
+  secretKey: String
+  createdAt: DateTime
+}
+
+type Token {
+  accessToken: String!
+  tokenType: String
+  expiresIn: Int
+}
+
+# ─── Pagination Wrapper ────────────────────────────────────────────────────────
+
+type PageInfo {
+  total: Int!
+  limit: Int!
+  offset: Int!
+  hasNextPage: Boolean!
+}
+
+type MessagesPage {
+  data: [Message!]!
+  pageInfo: PageInfo!
+}
+
+type ContactsPage {
+  data: [Contact!]!
+  pageInfo: PageInfo!
+}
+
+type ContactListsPage {
+  data: [ContactList!]!
+  pageInfo: PageInfo!
+}
+
+type CampaignsPage {
+  data: [Campaign!]!
+  pageInfo: PageInfo!
+}
+
+type CampaignDraftsPage {
+  data: [CampaignDraft!]!
+  pageInfo: PageInfo!
+}
+
+type TemplatesPage {
+  data: [Template!]!
+  pageInfo: PageInfo!
+}
+
+type SuppressionsPage {
+  data: [Suppression!]!
+  pageInfo: PageInfo!
+}
+
+type WebhooksPage {
+  data: [Webhook!]!
+  pageInfo: PageInfo!
+}
+
+# ─── Input Types ──────────────────────────────────────────────────────────────
+
+input EmailHeaderInput {
+  email: String!
+  name: String
+}
+
+input RecipientInput {
+  email: String!
+  name: String
+  variables: JSON
+}
+
+input AttachmentInput {
+  contentType: String!
+  filename: String!
+  base64Content: String!
+}
+
+input SendEmailInput {
+  from: EmailHeaderInput!
+  replyTo: EmailHeaderInput
+  to: [RecipientInput!]!
+  cc: [RecipientInput]
+  bcc: [RecipientInput]
+  subject: String
+  textPart: String
+  htmlPart: String
+  templateID: ID
+  variables: JSON
+  attachments: [AttachmentInput]
+  inlinedAttachments: [AttachmentInput]
+  trackOpens: String
+  trackClicks: String
+  customID: String
+  eventPayload: String
+  urlTags: String
+}
+
+input CreateContactInput {
+  email: String!
+  name: String
+  isExcludedFromCampaigns: Boolean
+  properties: JSON
+}
+
+input UpdateContactInput {
+  name: String
+  isExcludedFromCampaigns: Boolean
+  properties: JSON
+}
+
+input CreateContactListInput {
+  name: String!
+  address: String
+}
+
+input CreateCampaignDraftInput {
+  subject: String!
+  senderEmail: String!
+  senderName: String
+  listID: ID!
+  templateID: ID
+  htmlPart: String
+  textPart: String
+  replyEmail: String
+  title: String
+  scheduledAt: DateTime
+  trackOpens: Boolean
+  trackClicks: Boolean
+}
+
+input CreateTemplateInput {
+  name: String!
+  authorEmail: String
+  editMode: Int
+  isTextPartIncluded: Boolean
+  categories: [String]
+  htmlPart: String
+  textPart: String
+  subject: String
+}
+
+input AddSenderInput {
+  email: String!
+  name: String
+}
+
+input CreateWebhookInput {
+  url: String!
+  eventType: WebhookEventEnum!
+  isBackup: Boolean
+}
+
+input CreateParseRouteInput {
+  email: String!
+  url: String!
+  apiKeyID: ID
+}
+
+input SuppressionInput {
+  email: String!
+  suppressionType: SuppressionTypeEnum!
+  campaignID: ID
+  messageID: ID
+  reason: String
+}
+
+input BulkJobInput {
+  action: ListActionEnum!
+  contacts: [CreateContactInput!]
+  contactsLists: [ID]
+}
+
+input ContactListSubscriptionInput {
+  contactID: ID!
+  listID: ID!
+  action: ListActionEnum!
+}
+
+# ─── Send Response ────────────────────────────────────────────────────────────
+
+type SendEmailResponse {
+  messages: [SentMessageResult!]!
+}
+
+type SentMessageResult {
+  status: String!
+  customID: String
+  to: [MessageRecipientResult!]
+  cc: [MessageRecipientResult!]
+  bcc: [MessageRecipientResult!]
+}
+
+type MessageRecipientResult {
+  email: String!
+  messageID: String
+  messageUUID: String
+  messageHref: String
+}
+
+# ─── Root Query ───────────────────────────────────────────────────────────────
+
+type Query {
+  # Messages
+  message(id: ID!): Message
+  messages(limit: Int, offset: Int, status: MessageStatusEnum, contactID: ID, campaignID: ID): MessagesPage!
+  messageHistory(contactEmail: String!, limit: Int, offset: Int): MessagesPage!
+
+  # Contacts
+  contact(id: ID!): Contact
+  contacts(limit: Int, offset: Int, isExcludedFromCampaigns: Boolean): ContactsPage!
+  contactByEmail(email: String!): Contact
+
+  # Contact Lists
+  contactList(id: ID!): ContactList
+  contactLists(limit: Int, offset: Int): ContactListsPage!
+  contactListMembers(listID: ID!, limit: Int, offset: Int): ContactsPage!
+
+  # Campaigns
+  campaign(id: ID!): Campaign
+  campaigns(limit: Int, offset: Int): CampaignsPage!
+  campaignDraft(id: ID!): CampaignDraft
+  campaignDrafts(limit: Int, offset: Int): CampaignDraftsPage!
+  campaignDraftStatus(id: ID!): CampaignDraftStatus
+  campaignStatistics(id: ID!): CampaignStatistics
+
+  # Templates
+  template(id: ID!): Template
+  templates(limit: Int, offset: Int, ownerType: TemplateOwnershipEnum): TemplatesPage!
+  templateContent(id: ID!): TemplateContent
+
+  # Senders
+  sender(id: ID!): Sender
+  senders(limit: Int, offset: Int): [Sender!]!
+
+  # Domains
+  domain(id: ID!): Domain
+  domains(limit: Int, offset: Int): [Domain!]!
+
+  # Statistics
+  statistics(campaignID: ID, contactID: ID, fromTS: DateTime, toTS: DateTime): Statistics
+  deliveryStats(campaignID: ID, fromTS: DateTime, toTS: DateTime): DeliveryStats
+  openStats(campaignID: ID, fromTS: DateTime, toTS: DateTime): OpenStats
+  clickStats(campaignID: ID, fromTS: DateTime, toTS: DateTime): ClickStats
+  bounceStats(campaignID: ID, fromTS: DateTime, toTS: DateTime): BounceStats
+
+  # Suppressions
+  suppression(id: ID!): Suppression
+  suppressions(limit: Int, offset: Int, suppressionType: SuppressionTypeEnum): SuppressionsPage!
+
+  # Bulk Jobs
+  bulkJob(id: ID!): BulkJob
+  bulkJobs(limit: Int, offset: Int): [BulkJob!]!
+  bulkJobStatus(id: ID!): BulkJobStatus
+
+  # Webhooks
+  webhook(id: ID!): Webhook
+  webhooks(limit: Int, offset: Int): WebhooksPage!
+
+  # Parse Routes
+  parseRoute(id: ID!): ParseRoute
+  parseRoutes(limit: Int, offset: Int): [ParseRoute!]!
+
+  # Account
+  subAccount(id: ID!): SubAccount
+  subAccounts(limit: Int, offset: Int): [SubAccount!]!
+  apiKey(id: ID!): APIKey
+  apiKeys(limit: Int, offset: Int): [APIKey!]!
+}
+
+# ─── Root Mutation ────────────────────────────────────────────────────────────
+
+type Mutation {
+  # Email Sending
+  sendEmail(input: SendEmailInput!): SendEmailResponse!
+
+  # Contact Management
+  createContact(input: CreateContactInput!): Contact!
+  updateContact(id: ID!, input: UpdateContactInput!): Contact!
+  deleteContact(id: ID!): Boolean!
+  subscribeContactToList(input: ContactListSubscriptionInput!): ContactsListMembership!
+  unsubscribeContactFromList(contactID: ID!, listID: ID!): Boolean!
+  manageContactListMembership(input: ContactListSubscriptionInput!): ContactsListMembership!
+
+  # Contact Lists
+  createContactList(input: CreateContactListInput!): ContactList!
+  updateContactList(id: ID!, name: String!): ContactList!
+  deleteContactList(id: ID!): Boolean!
+
+  # Campaign Drafts
+  createCampaignDraft(input: CreateCampaignDraftInput!): CampaignDraft!
+  updateCampaignDraft(id: ID!, input: CreateCampaignDraftInput!): CampaignDraft!
+  sendCampaignDraft(id: ID!): CampaignDraftStatus!
+  scheduleCampaignDraft(id: ID!, scheduledAt: DateTime!): CampaignDraft!
+  deleteCampaignDraft(id: ID!): Boolean!
+
+  # Templates
+  createTemplate(input: CreateTemplateInput!): Template!
+  updateTemplate(id: ID!, input: CreateTemplateInput!): Template!
+  deleteTemplate(id: ID!): Boolean!
+
+  # Senders
+  addSender(input: AddSenderInput!): Sender!
+  validateSender(id: ID!): Sender!
+  deleteSender(id: ID!): Boolean!
+
+  # Domain Verification
+  verifyDomain(domain: String!): Domain!
+
+  # Suppressions
+  addToSuppressionList(input: SuppressionInput!): Suppression!
+  removeFromSuppressionList(id: ID!): Boolean!
+
+  # Bulk Jobs
+  createBulkJob(input: BulkJobInput!): BulkJob!
+
+  # Webhooks
+  createWebhook(input: CreateWebhookInput!): Webhook!
+  updateWebhook(id: ID!, url: String, isBackup: Boolean): Webhook!
+  deleteWebhook(id: ID!): Boolean!
+
+  # Parse Routes
+  createParseRoute(input: CreateParseRouteInput!): ParseRoute!
+  updateParseRoute(id: ID!, url: String!): ParseRoute!
+  deleteParseRoute(id: ID!): Boolean!
+
+  # Account
+  createSubAccount(name: String!, senderEmail: String): SubAccount!
+  createAPIKey(name: String!, acl: String): APIKey!
+}
