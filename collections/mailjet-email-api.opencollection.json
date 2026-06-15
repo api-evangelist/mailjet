@@ -1,0 +1,416 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mailjet Email API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send transactional emails (v3.1)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send one or more transactional emails using the Send API v3.1. Each message in the Messages array specifies its own sender, recipients, subject, content, and optional template."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/contact",
+            "params": [
+              {
+                "name": "Limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List contacts"
+        },
+        {
+          "info": {
+            "name": "Create a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/contact",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a contact"
+        },
+        {
+          "info": {
+            "name": "Get a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/contact/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a contact"
+        },
+        {
+          "info": {
+            "name": "Update a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mailjet.com/v3.1/contact/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a contact"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contact Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contact lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/contactslist"
+          },
+          "docs": "List contact lists"
+        },
+        {
+          "info": {
+            "name": "Create a contact list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/contactslist",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a contact list"
+        },
+        {
+          "info": {
+            "name": "Get a contact list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/contactslist/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a contact list"
+        },
+        {
+          "info": {
+            "name": "Delete a contact list",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mailjet.com/v3.1/contactslist/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a contact list"
+        },
+        {
+          "info": {
+            "name": "Bulk add or remove contacts in a list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/contactslist/:id/managemanycontacts",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Bulk add or remove contacts in a list"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Campaigns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/campaign"
+          },
+          "docs": "List campaigns"
+        },
+        {
+          "info": {
+            "name": "List campaign drafts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/campaigndraft"
+          },
+          "docs": "List campaign drafts"
+        },
+        {
+          "info": {
+            "name": "Create a campaign draft",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/campaigndraft",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a campaign draft"
+        },
+        {
+          "info": {
+            "name": "Send a campaign draft",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/campaigndraft/:id/send",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Send a campaign draft"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/template"
+          },
+          "docs": "List templates"
+        },
+        {
+          "info": {
+            "name": "Create a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a template"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Senders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sender addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/sender"
+          },
+          "docs": "List sender addresses"
+        },
+        {
+          "info": {
+            "name": "Create a sender address",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/sender",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a sender address"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Statistics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get sending statistic counters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/statcounters",
+            "params": [
+              {
+                "name": "SourceID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CounterSource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CounterTiming",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CounterResolution",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get sending statistic counters"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Event",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the event history of a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/messagehistory/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the event history of a message"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

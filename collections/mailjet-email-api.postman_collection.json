@@ -1,0 +1,2107 @@
+{
+  "item": [
+    {
+      "id": "4704c3eb-e167-40d6-b936-7ebf71512c59",
+      "name": "Send",
+      "description": {
+        "content": "Send transactional and marketing emails",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "748248cb-4f8d-4a78-8bf1-a8de0ea28c75",
+          "name": "Send transactional emails (v3.1)",
+          "request": {
+            "name": "Send transactional emails (v3.1)",
+            "description": {
+              "content": "Send one or more transactional emails using the Send API v3.1. Each message in the Messages array specifies its own sender, recipients, subject, content, and optional template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3.1",
+                "send"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"<email>\",\n        \"Name\": \"<string>\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Subject\": \"<string>\",\n      \"TextPart\": \"<string>\",\n      \"HTMLPart\": \"<string>\",\n      \"TemplateID\": \"<integer>\",\n      \"TemplateLanguage\": \"<boolean>\",\n      \"Variables\": {\n        \"key_0\": 4834.600101163343,\n        \"key_1\": \"string\"\n      },\n      \"CustomID\": \"<string>\",\n      \"EventPayload\": \"<string>\",\n      \"Headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"<email>\",\n        \"Name\": \"<string>\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Subject\": \"<string>\",\n      \"TextPart\": \"<string>\",\n      \"HTMLPart\": \"<string>\",\n      \"TemplateID\": \"<integer>\",\n      \"TemplateLanguage\": \"<boolean>\",\n      \"Variables\": {\n        \"key_0\": 6428.77670735113,\n        \"key_1\": 3412,\n        \"key_2\": false\n      },\n      \"CustomID\": \"<string>\",\n      \"EventPayload\": \"<string>\",\n      \"Headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c2d8410f-45f4-4950-a4ad-015442ccd82b",
+              "name": "Send acknowledged",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3.1",
+                    "send"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"hDRJhh@m.ht\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"laiSO@CKBFOJ.zt\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"JPlHaZSd8J1mM1@QJJJhvGRiLVnkDXptyzcKxXizdcJvfhp.azc\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"NPdJV-0aV5@xKdYcebdmj.bim\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"AyOYcKY@dm.nhx\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"kkOx@NXqPqNWzCbtuIXNjRkfIctUYS.vxef\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"AmCLgpqc@wARqEwRZJX.zdcw\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 9033,\n      \"TemplateLanguage\": false,\n      \"Variables\": {\n        \"key_0\": 3357.682683124804,\n        \"key_1\": 376.2785171035488\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"rLcKl@SsBWbgIaDJagsdOBoF.bfs\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"hME@QFvfiyyTiuiIHnnJrMwUbrfQRBhJm.yi\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"1TH@sWOcaMtQjn.voj\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"OJP1unL4F5gYh@zTLLsjoZDmFbJqaGrSoAQfgbGpYT.dl\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"8yOj2AMbvNs@VtQIOHKqNboz.gj\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"RRfou2u@IWWYOU.ey\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"NL6U7-T@XZFpUquOQaLyRiFDrhIhIC.avc\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 5739,\n      \"TemplateLanguage\": false,\n      \"Variables\": {\n        \"key_0\": true\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Messages\": [\n    {\n      \"Status\": \"string\",\n      \"To\": [\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 4190,\n          \"MessageHref\": \"string\"\n        },\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 8751,\n          \"MessageHref\": \"string\"\n        }\n      ]\n    },\n    {\n      \"Status\": \"string\",\n      \"To\": [\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 7396,\n          \"MessageHref\": \"string\"\n        },\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 4485,\n          \"MessageHref\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "650e2a43-3098-4c66-9ec7-57d57b1844c8",
+              "name": "Validation error",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3.1",
+                    "send"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"hDRJhh@m.ht\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"laiSO@CKBFOJ.zt\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"JPlHaZSd8J1mM1@QJJJhvGRiLVnkDXptyzcKxXizdcJvfhp.azc\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"NPdJV-0aV5@xKdYcebdmj.bim\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"AyOYcKY@dm.nhx\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"kkOx@NXqPqNWzCbtuIXNjRkfIctUYS.vxef\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"AmCLgpqc@wARqEwRZJX.zdcw\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 9033,\n      \"TemplateLanguage\": false,\n      \"Variables\": {\n        \"key_0\": 3357.682683124804,\n        \"key_1\": 376.2785171035488\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"rLcKl@SsBWbgIaDJagsdOBoF.bfs\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"hME@QFvfiyyTiuiIHnnJrMwUbrfQRBhJm.yi\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"1TH@sWOcaMtQjn.voj\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"OJP1unL4F5gYh@zTLLsjoZDmFbJqaGrSoAQfgbGpYT.dl\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"8yOj2AMbvNs@VtQIOHKqNboz.gj\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"RRfou2u@IWWYOU.ey\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"NL6U7-T@XZFpUquOQaLyRiFDrhIhIC.avc\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 5739,\n      \"TemplateLanguage\": false,\n      \"Variables\": {\n        \"key_0\": true\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c948bbb7-b77f-4971-9b8d-f20fa1dc13b9",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3.1",
+                    "send"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"hDRJhh@m.ht\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"laiSO@CKBFOJ.zt\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"JPlHaZSd8J1mM1@QJJJhvGRiLVnkDXptyzcKxXizdcJvfhp.azc\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"NPdJV-0aV5@xKdYcebdmj.bim\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"AyOYcKY@dm.nhx\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"kkOx@NXqPqNWzCbtuIXNjRkfIctUYS.vxef\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"AmCLgpqc@wARqEwRZJX.zdcw\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 9033,\n      \"TemplateLanguage\": false,\n      \"Variables\": {\n        \"key_0\": 3357.682683124804,\n        \"key_1\": 376.2785171035488\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"rLcKl@SsBWbgIaDJagsdOBoF.bfs\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"hME@QFvfiyyTiuiIHnnJrMwUbrfQRBhJm.yi\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"1TH@sWOcaMtQjn.voj\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"OJP1unL4F5gYh@zTLLsjoZDmFbJqaGrSoAQfgbGpYT.dl\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"8yOj2AMbvNs@VtQIOHKqNboz.gj\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"RRfou2u@IWWYOU.ey\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"NL6U7-T@XZFpUquOQaLyRiFDrhIhIC.avc\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 5739,\n      \"TemplateLanguage\": false,\n      \"Variables\": {\n        \"key_0\": true\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "83649faf-560e-41f3-b5d4-99cb5ed2399a",
+      "name": "Contacts",
+      "description": {
+        "content": "Manage contacts and properties",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "21ad0cc3-9782-4fae-9953-ea7457a9c582",
+          "name": "List contacts",
+          "request": {
+            "name": "List contacts",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contact"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Limit",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "Offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3ade526-5948-4a5a-ba61-cb4dbddffb24",
+              "name": "Contact list",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contact"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "Limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "Offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Count\": 1681,\n  \"Total\": 2878,\n  \"Data\": [\n    {\n      \"ID\": 6250,\n      \"Email\": \"7AJLk@EjCUuiIfEdkYwHcvjN.du\",\n      \"Name\": \"string\",\n      \"IsExcludedFromCampaigns\": false,\n      \"CreatedAt\": \"1952-05-15T10:02:10.709Z\"\n    },\n    {\n      \"ID\": 417,\n      \"Email\": \"0o4oUzMyHMkLD@kkiEaZPfNjsGCwRfbCjemQUgjQxvNOW.qmm\",\n      \"Name\": \"string\",\n      \"IsExcludedFromCampaigns\": false,\n      \"CreatedAt\": \"1962-11-22T12:15:55.289Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1773fce-30a0-4936-aa77-218c692ce9d0",
+          "name": "Create a contact",
+          "request": {
+            "name": "Create a contact",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contact"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ID\": \"<integer>\",\n  \"Email\": \"<email>\",\n  \"Name\": \"<string>\",\n  \"IsExcludedFromCampaigns\": \"<boolean>\",\n  \"CreatedAt\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7e18db94-7b50-4a1d-af5c-220f3396f852",
+              "name": "Contact created",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contact"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ID\": \"<integer>\",\n  \"Email\": \"<email>\",\n  \"Name\": \"<string>\",\n  \"IsExcludedFromCampaigns\": \"<boolean>\",\n  \"CreatedAt\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0e0ef4c-1121-4481-a989-b92f400f5ebe",
+          "name": "Get a contact",
+          "request": {
+            "name": "Get a contact",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contact",
+                ":id"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41476830-55a3-4a1c-af56-bd8c40f5c9f0",
+              "name": "Contact details",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ID\": 1381,\n  \"Email\": \"FzXMAr3AVBIhe@AOuqE.agw\",\n  \"Name\": \"string\",\n  \"IsExcludedFromCampaigns\": false,\n  \"CreatedAt\": \"2000-06-04T06:05:01.098Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6d3ddf1-df9c-40b6-8feb-7ae9d9be7c9d",
+          "name": "Update a contact",
+          "request": {
+            "name": "Update a contact",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contact",
+                ":id"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ID\": \"<integer>\",\n  \"Email\": \"<email>\",\n  \"Name\": \"<string>\",\n  \"IsExcludedFromCampaigns\": \"<boolean>\",\n  \"CreatedAt\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "12b06142-48af-40ae-bae9-7041abc39c83",
+              "name": "Contact updated",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ID\": \"<integer>\",\n  \"Email\": \"<email>\",\n  \"Name\": \"<string>\",\n  \"IsExcludedFromCampaigns\": \"<boolean>\",\n  \"CreatedAt\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7f55b12e-7651-4bb6-83b3-eda37ab83d68",
+      "name": "Contact Lists",
+      "description": {
+        "content": "Manage contact lists and recipients",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c646bb9-ef26-409e-8385-218b69d26d22",
+          "name": "List contact lists",
+          "request": {
+            "name": "List contact lists",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contactslist"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "969d1838-e00a-4a14-ba87-b62d9d369f1e",
+              "name": "Contact lists",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contactslist"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Count\": 5784,\n  \"Total\": 9513,\n  \"Data\": [\n    {\n      \"ID\": 1750,\n      \"Name\": \"string\",\n      \"SubscriberCount\": 5721,\n      \"IsDeleted\": false,\n      \"CreatedAt\": \"1953-07-06T16:58:57.423Z\"\n    },\n    {\n      \"ID\": 8756,\n      \"Name\": \"string\",\n      \"SubscriberCount\": 368,\n      \"IsDeleted\": false,\n      \"CreatedAt\": \"1970-02-27T18:53:50.572Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18de72ab-2d94-4ae2-bcb3-d089ca8d6586",
+          "name": "Create a contact list",
+          "request": {
+            "name": "Create a contact list",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contactslist"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ID\": \"<integer>\",\n  \"Name\": \"<string>\",\n  \"SubscriberCount\": \"<integer>\",\n  \"IsDeleted\": \"<boolean>\",\n  \"CreatedAt\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87792eb7-8606-4bd8-8c42-6dd3c30b586c",
+              "name": "Contact list created",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contactslist"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ID\": \"<integer>\",\n  \"Name\": \"<string>\",\n  \"SubscriberCount\": \"<integer>\",\n  \"IsDeleted\": \"<boolean>\",\n  \"CreatedAt\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69b985d9-da56-45bb-a20a-788d0f0ac274",
+          "name": "Get a contact list",
+          "request": {
+            "name": "Get a contact list",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contactslist",
+                ":id"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e70dae86-8f53-4a80-9468-74649b678576",
+              "name": "Contact list details",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contactslist",
+                    ":id"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ID\": 5797,\n  \"Name\": \"string\",\n  \"SubscriberCount\": 3809,\n  \"IsDeleted\": true,\n  \"CreatedAt\": \"2012-01-18T04:32:33.691Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3de3d414-fb7e-408f-97a9-025098a0b0ed",
+          "name": "Delete a contact list",
+          "request": {
+            "name": "Delete a contact list",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contactslist",
+                ":id"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb99f92c-3651-4e00-a57b-b1bd46797f7c",
+              "name": "Contact list deleted",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contactslist",
+                    ":id"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "867904b9-dc91-4730-a536-2f3a33a28963",
+          "name": "Bulk add or remove contacts in a list",
+          "request": {
+            "name": "Bulk add or remove contacts in a list",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "contactslist",
+                ":id",
+                "managemanycontacts"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Action\": \"<string>\",\n  \"Contacts\": [\n    {\n      \"ID\": \"<integer>\",\n      \"Email\": \"<email>\",\n      \"Name\": \"<string>\",\n      \"IsExcludedFromCampaigns\": \"<boolean>\",\n      \"CreatedAt\": \"<dateTime>\"\n    },\n    {\n      \"ID\": \"<integer>\",\n      \"Email\": \"<email>\",\n      \"Name\": \"<string>\",\n      \"IsExcludedFromCampaigns\": \"<boolean>\",\n      \"CreatedAt\": \"<dateTime>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fc88807e-520a-4f71-83b4-49422eeb6c6a",
+              "name": "Job submitted",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "contactslist",
+                    ":id",
+                    "managemanycontacts"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Action\": \"<string>\",\n  \"Contacts\": [\n    {\n      \"ID\": 695,\n      \"Email\": \"ji6@TgbXw.pqy\",\n      \"Name\": \"string\",\n      \"IsExcludedFromCampaigns\": false,\n      \"CreatedAt\": \"2018-07-21T14:03:24.386Z\"\n    },\n    {\n      \"ID\": 2712,\n      \"Email\": \"mYc1YpZ@VdEuciELIT.flp\",\n      \"Name\": \"string\",\n      \"IsExcludedFromCampaigns\": true,\n      \"CreatedAt\": \"2016-05-18T01:45:07.844Z\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "42b4085e-9ebb-4ea4-9654-4fb3f461003c",
+      "name": "Campaigns",
+      "description": {
+        "content": "Manage campaigns and drafts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "114a299b-0784-4d29-97b6-ce40485a316b",
+          "name": "List campaigns",
+          "request": {
+            "name": "List campaigns",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "campaign"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "709a4d72-40a4-4f6b-8249-f593dc3f4e9e",
+              "name": "Campaigns",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "campaign"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33288271-c53e-4f70-9d5d-876f841ee703",
+          "name": "List campaign drafts",
+          "request": {
+            "name": "List campaign drafts",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "campaigndraft"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a6c0b49-f1b9-4522-aa43-8354d408b2bf",
+              "name": "Campaign drafts",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "campaigndraft"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2dde397f-5882-43e7-bb0d-2aae5cd5c68d",
+          "name": "Create a campaign draft",
+          "request": {
+            "name": "Create a campaign draft",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "campaigndraft"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c5de4411-c419-4034-a4e0-8ad1dc059679",
+              "name": "Draft created",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "campaigndraft"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "26a76e9e-942c-487f-a029-0aef536aee74",
+          "name": "Send a campaign draft",
+          "request": {
+            "name": "Send a campaign draft",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "campaigndraft",
+                ":id",
+                "send"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd9f7648-5ed0-4926-ac5f-622bc30c80be",
+              "name": "Campaign sent",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "campaigndraft",
+                    ":id",
+                    "send"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8690136a-35fa-4ec1-96d6-3f5735997639",
+      "name": "Templates",
+      "description": {
+        "content": "Manage reusable email templates",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6b00d3c6-09cb-48d8-8d57-84241bf5e861",
+          "name": "List templates",
+          "request": {
+            "name": "List templates",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "template"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55ca36a8-aa54-4744-9b40-e7ac10d1738e",
+              "name": "Templates",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "template"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c433a0a-2068-42cc-be31-951bbc0d8044",
+          "name": "Create a template",
+          "request": {
+            "name": "Create a template",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "template"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "72f3c953-dc60-4e5f-8628-918fa7477711",
+              "name": "Template created",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "template"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3ec37991-0454-4ae2-bba3-9b1343cae21d",
+      "name": "Senders",
+      "description": {
+        "content": "Manage verified sender addresses",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5a6ce318-e4a9-4057-a1db-e13412b40afc",
+          "name": "List sender addresses",
+          "request": {
+            "name": "List sender addresses",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "sender"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a8deb04-9837-42d7-a8e3-9df6811ad27b",
+              "name": "Senders",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "sender"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39fa5318-79dc-47a9-be6c-20bb9f4d1955",
+          "name": "Create a sender address",
+          "request": {
+            "name": "Create a sender address",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "sender"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Email\": \"<email>\",\n  \"Name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f5e4b0c-0510-460a-b9ab-eeedebf70b75",
+              "name": "Sender created",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "sender"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Email\": \"<email>\",\n  \"Name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "dc9b0c26-e7f1-4c89-a6ce-57a7dd5d55c8",
+      "name": "Statistics",
+      "description": {
+        "content": "Retrieve aggregated sending statistics",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "17aaaf13-91e0-4729-894c-f21bd497fe5a",
+          "name": "Get sending statistic counters",
+          "request": {
+            "name": "Get sending statistic counters",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "statcounters"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SourceID",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CounterSource",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CounterTiming",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CounterResolution",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37762303-49db-4d02-88a3-96133fd68065",
+              "name": "Statistic counters",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "statcounters"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "SourceID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "CounterSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CounterTiming",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CounterResolution",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6fb7e1ff-2ccb-4da3-9bfe-dab1f5ced3ae",
+      "name": "Event",
+      "description": {
+        "content": "Retrieve real-time event data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7a9bfa06-fa77-4fed-a7d5-4f57e41eb612",
+          "name": "Get the event history of a message",
+          "request": {
+            "name": "Get the event history of a message",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "messagehistory",
+                ":id"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0a09460-ef1f-4836-a747-5b959b4bbd5e",
+              "name": "Event history",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "messagehistory",
+                    ":id"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mailjet.com/v3.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c50f5fb6-a21c-4d6b-8710-c2dbb59e9312",
+    "name": "Mailjet Email API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.\n\nContact Support:\n Name: Mailjet API Support",
+      "type": "text/plain"
+    }
+  }
+}
