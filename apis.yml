@@ -5,7 +5,7 @@ description: Mailjet is an email service provider offering a powerful REST API f
   with support for PHP, Python, Ruby, Java, Node.js, C#, and Go, along with SMTP relay
   and real-time email tracking.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Email
 - Email Delivery
