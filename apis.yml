@@ -47,7 +47,7 @@ common:
   url: https://www.linkedin.com/company/mailjet
 - type: Portal
   url: https://dev.mailjet.com/
-- type: SignUp
+- type: Signup
   url: https://app.mailjet.com/signup
 - type: Login
   url: https://app.mailjet.com/
