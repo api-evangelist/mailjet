@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/mailjet-email-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BasicAuth
+  type: http
+  scheme: basic
+  description: API key and secret used as HTTP Basic credentials
+  sources:
+  - openapi/mailjet-email-api-openapi.yml

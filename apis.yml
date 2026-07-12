@@ -43,6 +43,10 @@ apis:
   - url: graphql/mailjet-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/mailjet-domain-security.yml
+- type: Authentication
+  url: authentication/mailjet-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/mailjet
 - type: Portal
@@ -63,6 +67,8 @@ common:
   url: https://www.mailjet.com/legal/terms/
 - type: PrivacyPolicy
   url: https://www.mailjet.com/legal/privacy-policy/
+- type: Blog
+  url: https://www.mailjet.com/blog/feed/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
