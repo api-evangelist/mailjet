@@ -1,0 +1,21 @@
+{
+  "repo": "mailjet",
+  "feeds": [
+    {
+      "source": "https://www.mailjet.com/blog/feed/",
+      "feed_url": "https://www.mailjet.com/blog/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.mailjet.com/legal/privacy-policy/",
+      "feed_url": "https://www.mailjet.com/legal/privacy-policy/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 10
+}
