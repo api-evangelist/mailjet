@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: Mailjet Email Campaigns Senders API
+  description: The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.
+  version: '3.1'
+  contact:
+    name: Mailjet API Support
+    url: https://documentation.mailjet.com/hc/en-us
+  termsOfService: https://www.mailjet.com/legal/terms/
+servers:
+- url: https://api.mailjet.com/v3.1
+  description: Send API v3.1
+- url: https://api.mailjet.com/v3
+  description: REST API v3
+security:
+- BasicAuth: []
+tags:
+- name: Senders
+  description: Manage verified sender addresses
+paths:
+  /sender:
+    get:
+      operationId: listSenders
+      summary: List sender addresses
+      tags:
+      - Senders
+      servers:
+      - url: https://api.mailjet.com/v3
+      responses:
+        '200':
+          description: Senders
+    post:
+      operationId: createSender
+      summary: Create a sender address
+      tags:
+      - Senders
+      servers:
+      - url: https://api.mailjet.com/v3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Email:
+                  type: string
+                  format: email
+                Name:
+                  type: string
+      responses:
+        '201':
+          description: Sender created
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: API key and secret used as HTTP Basic credentials
+externalDocs:
+  description: Mailjet API Reference
+  url: https://dev.mailjet.com/email/reference/

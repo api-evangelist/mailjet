@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Mailjet Email Campaigns Templates API
+  description: The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.
+  version: '3.1'
+  contact:
+    name: Mailjet API Support
+    url: https://documentation.mailjet.com/hc/en-us
+  termsOfService: https://www.mailjet.com/legal/terms/
+servers:
+- url: https://api.mailjet.com/v3.1
+  description: Send API v3.1
+- url: https://api.mailjet.com/v3
+  description: REST API v3
+security:
+- BasicAuth: []
+tags:
+- name: Templates
+  description: Manage reusable email templates
+paths:
+  /template:
+    get:
+      operationId: listTemplates
+      summary: List templates
+      tags:
+      - Templates
+      servers:
+      - url: https://api.mailjet.com/v3
+      responses:
+        '200':
+          description: Templates
+    post:
+      operationId: createTemplate
+      summary: Create a template
+      tags:
+      - Templates
+      servers:
+      - url: https://api.mailjet.com/v3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Template created
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: API key and secret used as HTTP Basic credentials
+externalDocs:
+  description: Mailjet API Reference
+  url: https://dev.mailjet.com/email/reference/

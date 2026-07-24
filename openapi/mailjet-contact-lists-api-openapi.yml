@@ -1,0 +1,168 @@
+openapi: 3.1.0
+info:
+  title: Mailjet Email Campaigns Contact Lists API
+  description: The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.
+  version: '3.1'
+  contact:
+    name: Mailjet API Support
+    url: https://documentation.mailjet.com/hc/en-us
+  termsOfService: https://www.mailjet.com/legal/terms/
+servers:
+- url: https://api.mailjet.com/v3.1
+  description: Send API v3.1
+- url: https://api.mailjet.com/v3
+  description: REST API v3
+security:
+- BasicAuth: []
+tags:
+- name: Contact Lists
+  description: Manage contact lists and recipients
+paths:
+  /contactslist:
+    get:
+      operationId: listContactsLists
+      summary: List contact lists
+      tags:
+      - Contact Lists
+      servers:
+      - url: https://api.mailjet.com/v3
+      responses:
+        '200':
+          description: Contact lists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedContactsLists'
+    post:
+      operationId: createContactsList
+      summary: Create a contact list
+      tags:
+      - Contact Lists
+      servers:
+      - url: https://api.mailjet.com/v3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactsList'
+      responses:
+        '201':
+          description: Contact list created
+  /contactslist/{id}:
+    get:
+      operationId: getContactsList
+      summary: Get a contact list
+      tags:
+      - Contact Lists
+      servers:
+      - url: https://api.mailjet.com/v3
+      parameters:
+      - $ref: '#/components/parameters/PathId'
+      responses:
+        '200':
+          description: Contact list details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactsList'
+    delete:
+      operationId: deleteContactsList
+      summary: Delete a contact list
+      tags:
+      - Contact Lists
+      servers:
+      - url: https://api.mailjet.com/v3
+      parameters:
+      - $ref: '#/components/parameters/PathId'
+      responses:
+        '204':
+          description: Contact list deleted
+  /contactslist/{id}/managemanycontacts:
+    post:
+      operationId: manageManyContacts
+      summary: Bulk add or remove contacts in a list
+      tags:
+      - Contact Lists
+      servers:
+      - url: https://api.mailjet.com/v3
+      parameters:
+      - $ref: '#/components/parameters/PathId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Action:
+                  type: string
+                  enum:
+                  - addnoforce
+                  - addforce
+                  - remove
+                  - unsub
+                Contacts:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Contact'
+      responses:
+        '201':
+          description: Job submitted
+components:
+  parameters:
+    PathId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    PaginatedContactsLists:
+      type: object
+      properties:
+        Count:
+          type: integer
+        Total:
+          type: integer
+        Data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactsList'
+    Contact:
+      type: object
+      properties:
+        ID:
+          type: integer
+        Email:
+          type: string
+          format: email
+        Name:
+          type: string
+        IsExcludedFromCampaigns:
+          type: boolean
+        CreatedAt:
+          type: string
+          format: date-time
+    ContactsList:
+      type: object
+      properties:
+        ID:
+          type: integer
+        Name:
+          type: string
+        SubscriberCount:
+          type: integer
+        IsDeleted:
+          type: boolean
+        CreatedAt:
+          type: string
+          format: date-time
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: API key and secret used as HTTP Basic credentials
+externalDocs:
+  description: Mailjet API Reference
+  url: https://dev.mailjet.com/email/reference/
