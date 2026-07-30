@@ -5,7 +5,20 @@ description: Mailjet is an email service provider offering a powerful REST API f
   with support for PHP, Python, Ruby, Java, Node.js, C#, and Go, along with SMTP relay
   and real-time email tracking.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mailjet.png
 tags:
 - Email
 - Email Delivery
@@ -17,19 +30,16 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: mailjet:mailjet-email-api
-  name: Mailjet Email API
-  description: The Mailjet REST API allows sending transactional and marketing emails
-    programmatically using HTTP GET and POST requests with JSON, XML, or other supported
-    formats. Includes send API, contact management, campaign management, statistics,
-    and event tracking.
+- aid: mailjet:mailjet-campaigns-api
+  name: Mailjet Campaigns API
+  description: Manage campaigns and drafts
   humanURL: https://dev.mailjet.com/
   baseURL: https://api.mailjet.com/v3
   tags:
-  - Email
-  - Marketing Email
-  - Transactional Email
+  - Campaigns
   properties:
+  - type: OpenAPI
+    url: openapi/mailjet-campaigns-api-openapi.yml
   - type: Documentation
     url: https://dev.mailjet.com/email/guides/
   - type: Reference
@@ -38,10 +48,148 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
+- aid: mailjet:mailjet-contact-lists-api
+  name: Mailjet Contact Lists API
+  description: Manage contact lists and recipients
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Contact Lists
+  properties:
   - type: OpenAPI
-    url: openapi/mailjet-email-api-openapi.yml
-  - url: graphql/mailjet-graphql.md
-    type: GraphQL
+    url: openapi/mailjet-contact-lists-api-openapi.yml
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
+- aid: mailjet:mailjet-contacts-api
+  name: Mailjet Contacts API
+  description: Manage contacts and properties
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/mailjet-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
+- aid: mailjet:mailjet-event-api
+  name: Mailjet Event API
+  description: Retrieve real-time event data
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Event
+  properties:
+  - type: OpenAPI
+    url: openapi/mailjet-event-api-openapi.yml
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
+- aid: mailjet:mailjet-send-api
+  name: Mailjet Send API
+  description: Send transactional and marketing emails
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Send
+  properties:
+  - type: OpenAPI
+    url: openapi/mailjet-send-api-openapi.yml
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
+- aid: mailjet:mailjet-senders-api
+  name: Mailjet Senders API
+  description: Manage verified sender addresses
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Senders
+  properties:
+  - type: OpenAPI
+    url: openapi/mailjet-senders-api-openapi.yml
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
+- aid: mailjet:mailjet-statistics-api
+  name: Mailjet Statistics API
+  description: Retrieve aggregated sending statistics
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Statistics
+  properties:
+  - type: OpenAPI
+    url: openapi/mailjet-statistics-api-openapi.yml
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
+- aid: mailjet:mailjet-templates-api
+  name: Mailjet Templates API
+  description: Manage reusable email templates
+  humanURL: https://dev.mailjet.com/
+  baseURL: https://api.mailjet.com/v3
+  tags:
+  - Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/mailjet-templates-api-openapi.yml
+  - type: Documentation
+    url: https://dev.mailjet.com/email/guides/
+  - type: Reference
+    url: https://dev.mailjet.com/email/reference/
+  - type: GettingStarted
+    url: https://dev.mailjet.com/email/guides/send-api-V3/
+  - type: Authentication
+    url: https://dev.mailjet.com/email/guides/#authentication
+  - type: GraphQL
+    url: graphql/mailjet-graphql.md
 common:
 - type: AgenticAccess
   url: agentic-access/mailjet-agentic-access.yml
