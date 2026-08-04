@@ -1,0 +1,28 @@
+{
+  "provider": "mailjet",
+  "sources": [
+    "mailjet-campaigns-api-openapi.yml",
+    "mailjet-contact-lists-api-openapi.yml",
+    "mailjet-contacts-api-openapi.yml",
+    "mailjet-event-api-openapi.yml",
+    "mailjet-send-api-openapi.yml",
+    "mailjet-senders-api-openapi.yml",
+    "mailjet-statistics-api-openapi.yml",
+    "mailjet-templates-api-openapi.yml"
+  ],
+  "outputs": [
+    "mailjet-campaigns-api-openapi.yml",
+    "mailjet-contact-lists-api-openapi.yml",
+    "mailjet-contacts-api-openapi.yml",
+    "mailjet-event-api-openapi.yml",
+    "mailjet-send-api-openapi.yml",
+    "mailjet-senders-api-openapi.yml",
+    "mailjet-statistics-api-openapi.yml",
+    "mailjet-templates-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
