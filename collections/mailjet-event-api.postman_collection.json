@@ -1,0 +1,136 @@
+{
+  "item": [
+    {
+      "id": "1cb34a88-a218-42d8-be6f-2effdee98946",
+      "name": "Event",
+      "description": {
+        "content": "Retrieve real-time event data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5d8515ef-6656-4c56-b37b-5e3bc14ec08d",
+          "name": "Get the event history of a message",
+          "request": {
+            "name": "Get the event history of a message",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "messagehistory",
+                ":id"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf505e45-eea8-46e6-a08d-7f65ad7d14b0",
+              "name": "Event history",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "messagehistory",
+                    ":id"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mailjet.com/v3.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ec11e2df-22c2-4c78-bde1-6b07875c934b",
+    "name": "Mailjet Email Campaigns Event API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.\n\nContact Support:\n Name: Mailjet API Support",
+      "type": "text/plain"
+    }
+  }
+}

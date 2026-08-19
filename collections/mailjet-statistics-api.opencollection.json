@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mailjet Email Campaigns Statistics API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Statistics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get sending statistic counters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/statcounters",
+            "params": [
+              {
+                "name": "SourceID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CounterSource",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CounterTiming",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CounterResolution",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get sending statistic counters"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,156 @@
+{
+  "item": [
+    {
+      "id": "da9e0813-9f72-46f0-a88b-cbfb8750a868",
+      "name": "Statistics",
+      "description": {
+        "content": "Retrieve aggregated sending statistics",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0dcd83af-8176-457b-b332-e262a48ce4b4",
+          "name": "Get sending statistic counters",
+          "request": {
+            "name": "Get sending statistic counters",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3",
+                "statcounters"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SourceID",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CounterSource",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CounterTiming",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "CounterResolution",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6aacd785-09bf-4045-b9d8-0372fe6cdc66",
+              "name": "Statistic counters",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3",
+                    "statcounters"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "SourceID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "CounterSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CounterTiming",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "CounterResolution",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mailjet.com/v3.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "45b41e3d-87d2-4ce4-af8d-66f72a26ce83",
+    "name": "Mailjet Email Campaigns Statistics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.\n\nContact Support:\n Name: Mailjet API Support",
+      "type": "text/plain"
+    }
+  }
+}

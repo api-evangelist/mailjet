@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mailjet Email Campaigns API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaigns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/campaign"
+          },
+          "docs": "List campaigns"
+        },
+        {
+          "info": {
+            "name": "List campaign drafts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mailjet.com/v3.1/campaigndraft"
+          },
+          "docs": "List campaign drafts"
+        },
+        {
+          "info": {
+            "name": "Create a campaign draft",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/campaigndraft",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a campaign draft"
+        },
+        {
+          "info": {
+            "name": "Send a campaign draft",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/campaigndraft/:id/send",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Send a campaign draft"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

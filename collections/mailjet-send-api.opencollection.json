@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mailjet Email Campaigns Send API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send transactional emails (v3.1)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mailjet.com/v3.1/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send one or more transactional emails using the Send API v3.1. Each message in the Messages array specifies its own sender, recipients, subject, content, and optional template."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,254 @@
+{
+  "item": [
+    {
+      "id": "3f6048ee-12d3-42cd-9a0c-811b48f97659",
+      "name": "Send",
+      "description": {
+        "content": "Send transactional and marketing emails",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5f04ac86-5c7f-401e-afa0-3a6d4c61488c",
+          "name": "Send transactional emails (v3.1)",
+          "request": {
+            "name": "Send transactional emails (v3.1)",
+            "description": {
+              "content": "Send one or more transactional emails using the Send API v3.1. Each message in the Messages array specifies its own sender, recipients, subject, content, and optional template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v3.1",
+                "send"
+              ],
+              "host": [
+                "api",
+                "mailjet",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"<email>\",\n        \"Name\": \"<string>\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Subject\": \"<string>\",\n      \"TextPart\": \"<string>\",\n      \"HTMLPart\": \"<string>\",\n      \"TemplateID\": \"<integer>\",\n      \"TemplateLanguage\": \"<boolean>\",\n      \"Variables\": {\n        \"key_0\": 7683,\n        \"key_1\": true\n      },\n      \"CustomID\": \"<string>\",\n      \"EventPayload\": \"<string>\",\n      \"Headers\": {\n        \"key_0\": \"<string>\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"<email>\",\n        \"Name\": \"<string>\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        },\n        {\n          \"Email\": \"<email>\",\n          \"Name\": \"<string>\"\n        }\n      ],\n      \"Subject\": \"<string>\",\n      \"TextPart\": \"<string>\",\n      \"HTMLPart\": \"<string>\",\n      \"TemplateID\": \"<integer>\",\n      \"TemplateLanguage\": \"<boolean>\",\n      \"Variables\": {\n        \"key_0\": \"string\",\n        \"key_1\": 7021\n      },\n      \"CustomID\": \"<string>\",\n      \"EventPayload\": \"<string>\",\n      \"Headers\": {\n        \"key_0\": \"<string>\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        },\n        {\n          \"ContentType\": \"<string>\",\n          \"Filename\": \"<string>\",\n          \"Base64Content\": \"<string>\",\n          \"ContentID\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dd93580c-1dc8-4b68-92e6-a3c717067176",
+              "name": "Send acknowledged",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3.1",
+                    "send"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"YZ7EZ2bwH3@hbrPCIFpfZD.scsn\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"TOXzyz5kX02BpW7@YCCTlfGQFAKbeDhvzctY.elto\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"c3wqAyzTWw@LFOwIz.nuo\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"p4JispvusYYJS7e@jhnDqEkjmbairgu.jxn\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"Xtt@libugfiJNowBo.hxdq\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"dOx@MUuSUJhAJsIIUkJ.uvef\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"N17Y@tekqUAGCBD.xjzq\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 7998,\n      \"TemplateLanguage\": true,\n      \"Variables\": {\n        \"key_0\": 2524.5459746807232,\n        \"key_1\": 6436.5558464882315,\n        \"key_2\": 1973,\n        \"key_3\": 2753.8901638447355\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"Kt8@BPmXeiezyE.dm\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"WQMd81p8S@vWtVqCMjSrWUYymR.ffo\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"Jx0H@HzaLIMdopqIflGdouBjcfgvGpxfqQQHPf.ido\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"P9BQ3YVhaWD@DOAUOOaACRvWIVnRYrUFRyqUfmIunCmHG.jlz\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"3gRKbuhy4ptw@fGELjkjnevgVqVWPhoucjIxGIw.ytp\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"TSvPZ8Wuxr4m1@UAtdL.yk\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"7Jclz560Vbdqz@lJmbqNrqoeJxj.iy\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 8724,\n      \"TemplateLanguage\": true,\n      \"Variables\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": 9079\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Messages\": [\n    {\n      \"Status\": \"string\",\n      \"To\": [\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 4957,\n          \"MessageHref\": \"string\"\n        },\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 2393,\n          \"MessageHref\": \"string\"\n        }\n      ]\n    },\n    {\n      \"Status\": \"string\",\n      \"To\": [\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 590,\n          \"MessageHref\": \"string\"\n        },\n        {\n          \"Email\": \"string\",\n          \"MessageUUID\": \"string\",\n          \"MessageID\": 6228,\n          \"MessageHref\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "093bb245-2ff0-447c-8e24-7613860f8bba",
+              "name": "Validation error",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3.1",
+                    "send"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"YZ7EZ2bwH3@hbrPCIFpfZD.scsn\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"TOXzyz5kX02BpW7@YCCTlfGQFAKbeDhvzctY.elto\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"c3wqAyzTWw@LFOwIz.nuo\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"p4JispvusYYJS7e@jhnDqEkjmbairgu.jxn\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"Xtt@libugfiJNowBo.hxdq\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"dOx@MUuSUJhAJsIIUkJ.uvef\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"N17Y@tekqUAGCBD.xjzq\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 7998,\n      \"TemplateLanguage\": true,\n      \"Variables\": {\n        \"key_0\": 2524.5459746807232,\n        \"key_1\": 6436.5558464882315,\n        \"key_2\": 1973,\n        \"key_3\": 2753.8901638447355\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"Kt8@BPmXeiezyE.dm\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"WQMd81p8S@vWtVqCMjSrWUYymR.ffo\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"Jx0H@HzaLIMdopqIflGdouBjcfgvGpxfqQQHPf.ido\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"P9BQ3YVhaWD@DOAUOOaACRvWIVnRYrUFRyqUfmIunCmHG.jlz\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"3gRKbuhy4ptw@fGELjkjnevgVqVWPhoucjIxGIw.ytp\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"TSvPZ8Wuxr4m1@UAtdL.yk\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"7Jclz560Vbdqz@lJmbqNrqoeJxj.iy\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 8724,\n      \"TemplateLanguage\": true,\n      \"Variables\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": 9079\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dab75fab-a410-482f-b8f8-17598f0a811f",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v3.1",
+                    "send"
+                  ],
+                  "host": [
+                    "api",
+                    "mailjet",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Messages\": [\n    {\n      \"From\": {\n        \"Email\": \"YZ7EZ2bwH3@hbrPCIFpfZD.scsn\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"TOXzyz5kX02BpW7@YCCTlfGQFAKbeDhvzctY.elto\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"c3wqAyzTWw@LFOwIz.nuo\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"p4JispvusYYJS7e@jhnDqEkjmbairgu.jxn\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"Xtt@libugfiJNowBo.hxdq\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"dOx@MUuSUJhAJsIIUkJ.uvef\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"N17Y@tekqUAGCBD.xjzq\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 7998,\n      \"TemplateLanguage\": true,\n      \"Variables\": {\n        \"key_0\": 2524.5459746807232,\n        \"key_1\": 6436.5558464882315,\n        \"key_2\": 1973,\n        \"key_3\": 2753.8901638447355\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    },\n    {\n      \"From\": {\n        \"Email\": \"Kt8@BPmXeiezyE.dm\",\n        \"Name\": \"string\"\n      },\n      \"To\": [\n        {\n          \"Email\": \"WQMd81p8S@vWtVqCMjSrWUYymR.ffo\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"Jx0H@HzaLIMdopqIflGdouBjcfgvGpxfqQQHPf.ido\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Cc\": [\n        {\n          \"Email\": \"P9BQ3YVhaWD@DOAUOOaACRvWIVnRYrUFRyqUfmIunCmHG.jlz\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"3gRKbuhy4ptw@fGELjkjnevgVqVWPhoucjIxGIw.ytp\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Bcc\": [\n        {\n          \"Email\": \"TSvPZ8Wuxr4m1@UAtdL.yk\",\n          \"Name\": \"string\"\n        },\n        {\n          \"Email\": \"7Jclz560Vbdqz@lJmbqNrqoeJxj.iy\",\n          \"Name\": \"string\"\n        }\n      ],\n      \"Subject\": \"string\",\n      \"TextPart\": \"string\",\n      \"HTMLPart\": \"string\",\n      \"TemplateID\": 8724,\n      \"TemplateLanguage\": true,\n      \"Variables\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": 9079\n      },\n      \"CustomID\": \"string\",\n      \"EventPayload\": \"string\",\n      \"Headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"Attachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ],\n      \"InlinedAttachments\": [\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        },\n        {\n          \"ContentType\": \"string\",\n          \"Filename\": \"string\",\n          \"Base64Content\": \"string\",\n          \"ContentID\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"SandboxMode\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mailjet.com/v3.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f96f5559-3873-4721-a7c8-73d293dccbe0",
+    "name": "Mailjet Email Campaigns Send API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.\n\nContact Support:\n Name: Mailjet API Support",
+      "type": "text/plain"
+    }
+  }
+}
