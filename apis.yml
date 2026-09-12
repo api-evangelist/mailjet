@@ -204,6 +204,8 @@ apis:
   - type: GraphQL
     url: graphql/mailjet-graphql.md
 common:
+- type: Website
+  url: https://www.mailjet.com/
 - type: AgenticAccess
   url: agentic-access/mailjet-agentic-access.yml
 - type: DomainSecurity
