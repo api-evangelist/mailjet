@@ -1,14 +1,7 @@
 {
   "provider": "mailjet",
   "sources": [
-    "mailjet-campaigns-api-openapi.yml",
-    "mailjet-contact-lists-api-openapi.yml",
-    "mailjet-contacts-api-openapi.yml",
-    "mailjet-event-api-openapi.yml",
-    "mailjet-send-api-openapi.yml",
-    "mailjet-senders-api-openapi.yml",
-    "mailjet-statistics-api-openapi.yml",
-    "mailjet-templates-api-openapi.yml"
+    "_original/mailjet-email-api-openapi.yml"
   ],
   "outputs": [
     "mailjet-campaigns-api-openapi.yml",
@@ -23,6 +16,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "mailjet-email-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "mailjet-campaigns-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailjet-contact-lists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailjet-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailjet-event-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailjet-send-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailjet-senders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailjet-statistics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailjet-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

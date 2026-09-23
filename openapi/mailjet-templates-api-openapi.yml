@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Mailjet Email Campaigns Templates API
+  title: Mailjet Email Templates API
   description: The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.
   version: '3.1'
   contact:

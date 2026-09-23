@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Mailjet Email Campaigns Send API
+  title: Mailjet Email Send API
   description: The Mailjet Email API enables sending transactional and marketing emails programmatically via JSON requests. The API also exposes resources for managing contacts, contact lists, segments, campaigns, templates, sender addresses, statistics, and event tracking. All requests use HTTP Basic authentication with an API key and secret pair issued from the Mailjet account dashboard.
   version: '3.1'
   contact:
@@ -46,6 +46,65 @@ paths:
           description: Authentication failed
 components:
   schemas:
+    SendV31Request:
+      type: object
+      required:
+      - Messages
+      properties:
+        Messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/SendV31Message'
+        SandboxMode:
+          type: boolean
+    EmailAddress:
+      type: object
+      required:
+      - Email
+      properties:
+        Email:
+          type: string
+          format: email
+        Name:
+          type: string
+    SendV31Response:
+      type: object
+      properties:
+        Messages:
+          type: array
+          items:
+            type: object
+            properties:
+              Status:
+                type: string
+              To:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Email:
+                      type: string
+                    MessageUUID:
+                      type: string
+                    MessageID:
+                      type: integer
+                    MessageHref:
+                      type: string
+    Attachment:
+      type: object
+      required:
+      - ContentType
+      - Filename
+      - Base64Content
+      properties:
+        ContentType:
+          type: string
+        Filename:
+          type: string
+        Base64Content:
+          type: string
+        ContentID:
+          type: string
     SendV31Message:
       type: object
       required:
@@ -95,65 +154,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Attachment'
-    Attachment:
-      type: object
-      required:
-      - ContentType
-      - Filename
-      - Base64Content
-      properties:
-        ContentType:
-          type: string
-        Filename:
-          type: string
-        Base64Content:
-          type: string
-        ContentID:
-          type: string
-    SendV31Response:
-      type: object
-      properties:
-        Messages:
-          type: array
-          items:
-            type: object
-            properties:
-              Status:
-                type: string
-              To:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    Email:
-                      type: string
-                    MessageUUID:
-                      type: string
-                    MessageID:
-                      type: integer
-                    MessageHref:
-                      type: string
-    EmailAddress:
-      type: object
-      required:
-      - Email
-      properties:
-        Email:
-          type: string
-          format: email
-        Name:
-          type: string
-    SendV31Request:
-      type: object
-      required:
-      - Messages
-      properties:
-        Messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/SendV31Message'
-        SandboxMode:
-          type: boolean
   securitySchemes:
     BasicAuth:
       type: http
