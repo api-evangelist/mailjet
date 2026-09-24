@@ -61,8 +61,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 - aid: mailjet:mailjet-contact-lists-api
   name: Mailjet Contact Lists API
   description: Manage contact lists and recipients
@@ -81,8 +79,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 - aid: mailjet:mailjet-contacts-api
   name: Mailjet Contacts API
   description: Manage contacts and properties
@@ -101,8 +97,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 - aid: mailjet:mailjet-event-api
   name: Mailjet Event API
   description: Retrieve real-time event data
@@ -121,8 +115,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 - aid: mailjet:mailjet-send-api
   name: Mailjet Send API
   description: Send transactional and marketing emails
@@ -141,8 +133,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 - aid: mailjet:mailjet-senders-api
   name: Mailjet Senders API
   description: Manage verified sender addresses
@@ -161,8 +151,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 - aid: mailjet:mailjet-statistics-api
   name: Mailjet Statistics API
   description: Retrieve aggregated sending statistics
@@ -181,8 +169,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 - aid: mailjet:mailjet-templates-api
   name: Mailjet Templates API
   description: Manage reusable email templates
@@ -201,8 +187,6 @@ apis:
     url: https://dev.mailjet.com/email/guides/send-api-V3/
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
-  - type: GraphQL
-    url: graphql/mailjet-graphql.md
 common:
 - type: Website
   url: https://www.mailjet.com/
