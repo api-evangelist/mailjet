@@ -125,6 +125,17 @@ components:
         CreatedAt:
           type: string
           format: date-time
+    PaginatedContactsLists:
+      type: object
+      properties:
+        Count:
+          type: integer
+        Total:
+          type: integer
+        Data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactsList'
     Contact:
       type: object
       properties:
@@ -140,17 +151,6 @@ components:
         CreatedAt:
           type: string
           format: date-time
-    PaginatedContactsLists:
-      type: object
-      properties:
-        Count:
-          type: integer
-        Total:
-          type: integer
-        Data:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContactsList'
   parameters:
     PathId:
       name: id

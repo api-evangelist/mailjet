@@ -46,17 +46,6 @@ paths:
           description: Authentication failed
 components:
   schemas:
-    SendV31Request:
-      type: object
-      required:
-      - Messages
-      properties:
-        Messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/SendV31Message'
-        SandboxMode:
-          type: boolean
     EmailAddress:
       type: object
       required:
@@ -66,44 +55,6 @@ components:
           type: string
           format: email
         Name:
-          type: string
-    SendV31Response:
-      type: object
-      properties:
-        Messages:
-          type: array
-          items:
-            type: object
-            properties:
-              Status:
-                type: string
-              To:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    Email:
-                      type: string
-                    MessageUUID:
-                      type: string
-                    MessageID:
-                      type: integer
-                    MessageHref:
-                      type: string
-    Attachment:
-      type: object
-      required:
-      - ContentType
-      - Filename
-      - Base64Content
-      properties:
-        ContentType:
-          type: string
-        Filename:
-          type: string
-        Base64Content:
-          type: string
-        ContentID:
           type: string
     SendV31Message:
       type: object
@@ -154,6 +105,55 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Attachment'
+    SendV31Response:
+      type: object
+      properties:
+        Messages:
+          type: array
+          items:
+            type: object
+            properties:
+              Status:
+                type: string
+              To:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Email:
+                      type: string
+                    MessageUUID:
+                      type: string
+                    MessageID:
+                      type: integer
+                    MessageHref:
+                      type: string
+    SendV31Request:
+      type: object
+      required:
+      - Messages
+      properties:
+        Messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/SendV31Message'
+        SandboxMode:
+          type: boolean
+    Attachment:
+      type: object
+      required:
+      - ContentType
+      - Filename
+      - Base64Content
+      properties:
+        ContentType:
+          type: string
+        Filename:
+          type: string
+        Base64Content:
+          type: string
+        ContentID:
+          type: string
   securitySchemes:
     BasicAuth:
       type: http
