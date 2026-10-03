@@ -111,20 +111,6 @@ paths:
           description: Job submitted
 components:
   schemas:
-    ContactsList:
-      type: object
-      properties:
-        ID:
-          type: integer
-        Name:
-          type: string
-        SubscriberCount:
-          type: integer
-        IsDeleted:
-          type: boolean
-        CreatedAt:
-          type: string
-          format: date-time
     PaginatedContactsLists:
       type: object
       properties:
@@ -147,6 +133,20 @@ components:
         Name:
           type: string
         IsExcludedFromCampaigns:
+          type: boolean
+        CreatedAt:
+          type: string
+          format: date-time
+    ContactsList:
+      type: object
+      properties:
+        ID:
+          type: integer
+        Name:
+          type: string
+        SubscriberCount:
+          type: integer
+        IsDeleted:
           type: boolean
         CreatedAt:
           type: string
