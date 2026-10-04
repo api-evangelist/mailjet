@@ -32,6 +32,9 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mailjet.png
+x-docs-platform: redocly
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
 - Email
 - Email Delivery
@@ -188,6 +191,9 @@ apis:
   - type: Authentication
     url: https://dev.mailjet.com/email/guides/#authentication
 common:
+- type: CapabilityMap
+  url: capabilities/mailjet-capability-edges.yml
+  name: Mailjet Business Capability Map
 - type: Website
   url: https://www.mailjet.com/
 - type: AgenticAccess
