@@ -89,18 +89,18 @@ paths:
           description: Contact updated
 components:
   parameters:
-    Limit:
-      name: Limit
-      in: query
-      schema:
-        type: integer
-        default: 10
     PathId:
       name: id
       in: path
       required: true
       schema:
         type: string
+    Limit:
+      name: Limit
+      in: query
+      schema:
+        type: integer
+        default: 10
     Offset:
       name: Offset
       in: query

@@ -110,7 +110,28 @@ paths:
         '201':
           description: Job submitted
 components:
+  parameters:
+    PathId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
+    ContactsList:
+      type: object
+      properties:
+        ID:
+          type: integer
+        Name:
+          type: string
+        SubscriberCount:
+          type: integer
+        IsDeleted:
+          type: boolean
+        CreatedAt:
+          type: string
+          format: date-time
     PaginatedContactsLists:
       type: object
       properties:
@@ -137,27 +158,6 @@ components:
         CreatedAt:
           type: string
           format: date-time
-    ContactsList:
-      type: object
-      properties:
-        ID:
-          type: integer
-        Name:
-          type: string
-        SubscriberCount:
-          type: integer
-        IsDeleted:
-          type: boolean
-        CreatedAt:
-          type: string
-          format: date-time
-  parameters:
-    PathId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     BasicAuth:
       type: http
