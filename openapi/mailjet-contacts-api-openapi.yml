@@ -89,6 +89,12 @@ paths:
           description: Contact updated
 components:
   parameters:
+    Offset:
+      name: Offset
+      in: query
+      schema:
+        type: integer
+        default: 0
     PathId:
       name: id
       in: path
@@ -101,13 +107,18 @@ components:
       schema:
         type: integer
         default: 10
-    Offset:
-      name: Offset
-      in: query
-      schema:
-        type: integer
-        default: 0
   schemas:
+    PaginatedContacts:
+      type: object
+      properties:
+        Count:
+          type: integer
+        Total:
+          type: integer
+        Data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contact'
     Contact:
       type: object
       properties:
@@ -123,17 +134,6 @@ components:
         CreatedAt:
           type: string
           format: date-time
-    PaginatedContacts:
-      type: object
-      properties:
-        Count:
-          type: integer
-        Total:
-          type: integer
-        Data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Contact'
   securitySchemes:
     BasicAuth:
       type: http

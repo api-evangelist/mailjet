@@ -46,6 +46,31 @@ paths:
           description: Authentication failed
 components:
   schemas:
+    EmailAddress:
+      type: object
+      required:
+      - Email
+      properties:
+        Email:
+          type: string
+          format: email
+        Name:
+          type: string
+    Attachment:
+      type: object
+      required:
+      - ContentType
+      - Filename
+      - Base64Content
+      properties:
+        ContentType:
+          type: string
+        Filename:
+          type: string
+        Base64Content:
+          type: string
+        ContentID:
+          type: string
     SendV31Response:
       type: object
       properties:
@@ -69,42 +94,6 @@ components:
                       type: integer
                     MessageHref:
                       type: string
-    Attachment:
-      type: object
-      required:
-      - ContentType
-      - Filename
-      - Base64Content
-      properties:
-        ContentType:
-          type: string
-        Filename:
-          type: string
-        Base64Content:
-          type: string
-        ContentID:
-          type: string
-    SendV31Request:
-      type: object
-      required:
-      - Messages
-      properties:
-        Messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/SendV31Message'
-        SandboxMode:
-          type: boolean
-    EmailAddress:
-      type: object
-      required:
-      - Email
-      properties:
-        Email:
-          type: string
-          format: email
-        Name:
-          type: string
     SendV31Message:
       type: object
       required:
@@ -154,6 +143,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Attachment'
+    SendV31Request:
+      type: object
+      required:
+      - Messages
+      properties:
+        Messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/SendV31Message'
+        SandboxMode:
+          type: boolean
   securitySchemes:
     BasicAuth:
       type: http

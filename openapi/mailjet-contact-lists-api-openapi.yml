@@ -118,6 +118,21 @@ components:
       schema:
         type: string
   schemas:
+    Contact:
+      type: object
+      properties:
+        ID:
+          type: integer
+        Email:
+          type: string
+          format: email
+        Name:
+          type: string
+        IsExcludedFromCampaigns:
+          type: boolean
+        CreatedAt:
+          type: string
+          format: date-time
     ContactsList:
       type: object
       properties:
@@ -143,21 +158,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ContactsList'
-    Contact:
-      type: object
-      properties:
-        ID:
-          type: integer
-        Email:
-          type: string
-          format: email
-        Name:
-          type: string
-        IsExcludedFromCampaigns:
-          type: boolean
-        CreatedAt:
-          type: string
-          format: date-time
   securitySchemes:
     BasicAuth:
       type: http
