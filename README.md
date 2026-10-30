@@ -1,4 +1,4 @@
-# Mailjet (mailjet)
+# Mailjet
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,64 +66,142 @@
 
 Mailjet is an email service provider offering a powerful REST API for sending transactional and marketing emails. It provides an easy-to-integrate API with support for PHP, Python, Ruby, Java, Node.js, C#, and Go, along with SMTP relay and real-time email tracking.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/mailjet/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/mailjet/refs/heads/main/apis.yml)
+**Areas:** Email · Email Delivery · Marketing Email · SMTP · Transactional Email
 
-## Scope
+## Mailjet on APIs.io
 
-- **Type:** Index
+Everything profiled for Mailjet is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mailjet/](https://apis.io/providers/mailjet/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Email
-- Email Delivery
-- Marketing Email
-- SMTP
-- Transactional Email
+- [Mailjet Campaigns API](https://apis.io/apis/mailjet/mailjet-campaigns-api/) — Manage campaigns and drafts
+- [Mailjet Contact Lists API](https://apis.io/apis/mailjet/mailjet-contact-lists-api/) — Manage contact lists and recipients
+- [Mailjet Contacts API](https://apis.io/apis/mailjet/mailjet-contacts-api/) — Manage contacts and properties
+- [Mailjet Event API](https://apis.io/apis/mailjet/mailjet-event-api/) — Retrieve real-time event data
+- [Mailjet Send API](https://apis.io/apis/mailjet/mailjet-send-api/) — Send transactional and marketing emails
+- [Mailjet Senders API](https://apis.io/apis/mailjet/mailjet-senders-api/) — Manage verified sender addresses
+- [Mailjet Statistics API](https://apis.io/apis/mailjet/mailjet-statistics-api/) — Retrieve aggregated sending statistics
+- [Mailjet Templates API](https://apis.io/apis/mailjet/mailjet-templates-api/) — Manage reusable email templates
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### GraphQL (1)
 
-### Mailjet Email API
+GraphQL schemas.
 
-The Mailjet REST API allows sending transactional and marketing emails programmatically using HTTP GET and POST requests with JSON, XML, or other supported formats. Includes send API, contact management, campaign management, statistics, and event tracking.
+- [Moved to /providers/mailjet/](https://apis.io/graphqls/mailjet/mailjet-graphql/)
 
-- **Human URL:** [https://dev.mailjet.com/](https://dev.mailjet.com/)
-- **Base URL:** `https://api.mailjet.com/v3`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Email
-- Marketing Email
-- Transactional Email
+- [Mailjet Agentic Access](https://apis.io/agentic-access/mailjet/mailjet-agentic-access/)
 
-#### Properties
+#### Collections (9)
 
-- [Documentation](https://dev.mailjet.com/email/guides/)
-- [Reference](https://dev.mailjet.com/email/reference/)
-- [Getting Started](https://dev.mailjet.com/email/guides/send-api-V3/)
-- [Authentication](https://dev.mailjet.com/email/guides/#authentication)
-- [OpenAPI](openapi/mailjet-email-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/mailjet-email-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/mailjet-email-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Mailjet Email Campaigns API](https://apis.io/collections/mailjet/open-mailjet-campaigns-api/)
+- [Mailjet Email Campaigns Contact Lists API](https://apis.io/collections/mailjet/open-mailjet-contact-lists-api/)
+- [Mailjet Email Campaigns Contacts API](https://apis.io/collections/mailjet/open-mailjet-contacts-api/)
+- [Mailjet Email API](https://apis.io/collections/mailjet/open-mailjet-email-api/)
+- [Mailjet Email Campaigns Event API](https://apis.io/collections/mailjet/open-mailjet-event-api/)
+- [Mailjet Email Campaigns Send API](https://apis.io/collections/mailjet/open-mailjet-send-api/)
+- [Mailjet Email Campaigns Senders API](https://apis.io/collections/mailjet/open-mailjet-senders-api/)
+- [Mailjet Email Campaigns Statistics API](https://apis.io/collections/mailjet/open-mailjet-statistics-api/)
+- [Mailjet Email Campaigns Templates API](https://apis.io/collections/mailjet/open-mailjet-templates-api/)
 
-- [LinkedIn](https://www.linkedin.com/company/mailjet)
-- [Portal](https://dev.mailjet.com/)
-- [Sign Up](https://app.mailjet.com/signup)
-- [Login](https://app.mailjet.com/)
-- [GitHub Organization](https://github.com/mailjet)
-- [Support](https://documentation.mailjet.com/hc/en-us)
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Mailjet Authentication](https://apis.io/security/mailjet/mailjet-authentication/)
+- [Mailjet Domain Security](https://apis.io/security/mailjet/mailjet-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Mailjet Plans Pricing](https://apis.io/plans/mailjet/mailjet-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Mailjet Rate Limits](https://apis.io/rate-limits/mailjet/mailjet-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Mailjet Finops](https://apis.io/finops/mailjet/mailjet-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.mailjet.com/)
 - [Pricing](https://www.mailjet.com/pricing/)
-- [Status Page](https://mailjetstatus.com/)
-- [Terms of Service](https://www.mailjet.com/legal/terms/)
-- [Privacy Policy](https://www.mailjet.com/legal/privacy-policy/)
+- [Support](https://documentation.mailjet.com/hc/en-us)
+- [Blog](https://www.mailjet.com/blog/feed/)
+- [Terms of service](https://www.mailjet.com/legal/terms/)
+- [Privacy policy](https://www.mailjet.com/legal/privacy-policy/)
+- [GitHub](https://github.com/mailjet)
+- [Status](https://mailjetstatus.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 40.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 46.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 57.1 |
+| Access clarity | 46.1 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mailjet/](https://apis.io/providers/mailjet/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Mailjet: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mailjet/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
